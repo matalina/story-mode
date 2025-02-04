@@ -1,0 +1,10 @@
+/node_modules/
+/dist/
+/.vscode/
+.DS_Store
+.lh/
+# Local Netlify folder
+.netlify
+
+/dev-dist/
+.env

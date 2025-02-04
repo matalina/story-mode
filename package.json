@@ -1,0 +1,43 @@
+{
+  "name": "my-ttrpg-generagots",
+  "version": "1.0.1",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "vite build",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^1.6.0",
+    "@sveltejs/vite-plugin-svelte": "^1.0.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "@testing-library/svelte": "^3.0.3",
+    "@types/jest": "^26.0.21",
+    "autoprefixer": "^10.2.5",
+    "babel-jest": "^26.6.3",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.1.12",
+    "jest": "^26.6.3",
+    "netlify-cli": "^15.1.1",
+    "postcss": "^8.4.6",
+    "postcss-load-config": "^4.0.1",
+    "svelte": "^3.35.0",
+    "svelte-jester": "^1.3.1",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.1.6",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.9.5",
+    "vite": "^3.0.0",
+    "vite-plugin-pwa": "^0.15.1"
+  },
+  "dependencies": {
+    "@dice-roller/rpg-dice-roller": "^5.2.1",
+    "@types/node": "^14.18.47",
+    "canvas": "^2.11.2",
+    "markdown-it": "^13.0.1",
+    "svelte-routing": "^1.6.0",
+    "timeago.js": "^4.0.2",
+    "turndown": "^7.1.2"
+  }
+}
