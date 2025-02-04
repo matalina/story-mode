@@ -14,3 +14,7 @@
   `}
   />
 </div>
+
+<style>
+  @reference '../../app.css';
+</style>

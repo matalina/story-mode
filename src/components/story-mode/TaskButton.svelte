@@ -66,3 +66,7 @@
   <input type="text" bind:value={dc} class="py-2 px-3 border w-10 border-orange-900 text-orange-900"/>
   <button on:click={generate} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">Do Task</button>
 </div>
+
+<style>
+  @reference '../../app.css';
+</style>

@@ -24,3 +24,7 @@
     Roll
   </button>
 </div>
+
+<style>
+  @reference '../../app.css';
+</style>

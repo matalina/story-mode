@@ -6,13 +6,11 @@
   const dispatch = createEventDispatcher();
 
   const oracle = [
-    [1, 2, 'No, and'],
-    [3, 7, 'No'],
-    [8, 9, 'No, but'],
-    [10, 10, 'Maybe'],
-    [11, 12, 'Yes, but'],
-    [13, 18, 'Yes'],
-    [19, 20, 'Yes, and'],
+    [1, 1, 'No, and'],
+    [2, 2, 'No, but'],
+    [3, 14, 'Yes, but'],
+    [15, 19, 'Yes'],
+    [20, 20, 'Yes, and'],
   ];
 
   let question = '';
@@ -74,3 +72,7 @@
   class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
   >Ask Oracle</button
 >
+
+<style>
+  @reference '../../app.css';
+</style>

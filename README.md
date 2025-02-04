@@ -8,7 +8,13 @@ You don't need any character sheets, rule-sets or anything other than your imagi
 
 The Oracle is based on a d20 roll with the following outcome table:
 
-_Coming Soon_
+| d20     | Result   |
+| ------- | -------- |
+| 1       | No, and  |
+| 2       | No, but  |
+| 3 - 14  | Yes, but |
+| 15 - 19 | Yes      |
+| 20      | Yes, and |
 
 If your characters need to preform a task that you want to randomize, just say what you are going to do and click the Do Task button.  The Task will automatically be set to the Difficulty of the Scene.
 

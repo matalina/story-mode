@@ -31,6 +31,8 @@
 </div>
 
 <style lang="postcss">
+  @reference './app.css';
+  
   .active {
     @apply bg-gray-700 text-gray-100 border-gray-100;
   }

@@ -85,7 +85,8 @@
   >
 </div>
 
-<style lang="postcss">
+<style>
+  @reference '../../app.css';
   .disable {
     @apply disabled:bg-orange-100 disabled:border-orange-700 disabled:text-orange-700 disabled:cursor-not-allowed;
   }

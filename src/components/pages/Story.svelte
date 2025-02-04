@@ -137,3 +137,7 @@
     <div bind:this={element} />
   </ToggleContent>
 </div>
+
+<style>
+  @reference '../../app.css';
+</style>

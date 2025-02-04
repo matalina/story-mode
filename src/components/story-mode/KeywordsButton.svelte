@@ -15,3 +15,7 @@ function generate() {
 
 
 <button on:click={generate} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">Ask Keywords</button>
+
+<style>
+    @reference '../../app.css';
+  </style>
