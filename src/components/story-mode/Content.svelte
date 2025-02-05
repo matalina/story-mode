@@ -1,64 +1,68 @@
 <script lang="ts">
-  import { afterUpdate, createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import TurndownService from 'turndown';
 
-  export let content;
+  interface ContentProps {
+    content: any;
+    start: () => void;
+  }
+  let { content, start }: ContentProps = $props();
 
-  const dispatch = createEventDispatcher();
-  const turndown = new TurndownService();
-  let element;
-  $: empty = Object.keys($content).length > 0;
+  const turndown = new TurndownService({
+        headingStyle: 'atx',
+        bulletListMarker: '*',
+        codeBlockStyle: 'fenced',
+        emDelimiter: '_',
+        strongDelimiter: '**',
+      });
+  let element: HTMLElement = $state({} as HTMLElement);
+  let length = $derived(Object.keys(content).length);
+  let empty = $derived(length > 0);
+
 
   function classStyle(type: string) {
     return `${type}-mode`;
   }
 
-  afterUpdate(() => {
-    scrollToBottom(element);
+  $effect(() => {
+      scrollToBottom(element, length);
   });
+
   onMount(() => {
     scrollToBottom(element);
   });
 
-  const scrollToBottom = async node => {
+  const scrollToBottom = async (node: HTMLElement, length?: number) => {
     node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
   };
 
   function clearSession() {
     localStorage.removeItem('content');
-    $content = {};
+    content = {};
   }
 
   function copySession() {
     if (navigator.clipboard) {
       const textContent = element.getHTML();
-      const copy = turndown.turndown(textContent, {
-        headingStyle: 'atx',
-        bulletListMarker: '*',
-        codeBlockedStyle: 'fenced',
-        emDelilmiter: '_',
-        strongDelimiter: '**',
-      });
+      const copy = turndown.turndown(textContent);
       navigator.clipboard.writeText(copy);
     }
   }
 
-  function startSession() {
-    dispatch('start');
-  }
-  function deleteEntry(key) {
-    console.log(key);
-    delete $content[key];
-    $content = { ...$content };
+
+  function deleteEntry(key: string) {
+    delete content[key];
+    content = { ...content };
   }
 </script>
 
 <div bind:this={element} style="overflow:auto; height:400px;">
-  {#each Object.keys($content) as key}
-    <div class={`entry ${classStyle($content[key].type)} flex`}>
-      <div class="flex-grow">{@html $content[key].output}</div>
+  {#each Object.keys(content) as key}
+    <div class={`entry ${classStyle(content[key].type)} flex`}>
+      <div class="flex-grow">{@html content[key].output}</div>
       <div class="p-2">
-        <button on:click={() => deleteEntry(key)}
+        <!-- svelte-ignore a11y_consider_explicit_label -->
+        <button onclick={() => deleteEntry(key)}
           ><i class="fa-light fa-square-xmark"></i></button
         >
       </div>
@@ -69,19 +73,19 @@
   <button
     class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
     class:disable={empty}
-    on:click={startSession}>New Scene</button
+    onclick={start}>New Scene</button
   >
   <button
     disabled={!empty}
     class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
     class:disable={!empty}
-    on:click={clearSession}>Clear</button
+    onclick={clearSession}>Clear</button
   >
   <button
     disabled={!empty}
     class:disable={!empty}
     class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
-    on:click={copySession}>Copy</button
+    onclick={copySession}>Copy</button
   >
 </div>
 

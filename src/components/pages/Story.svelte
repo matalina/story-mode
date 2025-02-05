@@ -1,7 +1,6 @@
 <script lang="ts">
   import { DiceRoll } from '@dice-roller/rpg-dice-roller';
   import MarkdownIt from 'markdown-it';
-  import { writable } from 'svelte/store';
   import Content from '../story-mode/Content.svelte';
   import DiceButton from '../story-mode/DiceButton.svelte';
   import InputButton from '../story-mode/InputButton.svelte';
@@ -17,7 +16,8 @@
     linkify: true,
   });
 
-  $: question = '';
+  let question = $state('');
+
   const types = [
     'input',
     'oracle',
@@ -33,13 +33,10 @@
       type: Type;
     };
   }
-  const storage = localStorage.content || `{}`;
-  const content = writable<StoryEntry>(JSON.parse(storage));
-  let element;
 
-  content.subscribe(item => {
-    localStorage.content = JSON.stringify(item);
-  });
+  const storage = $state(localStorage.content || `{}`);
+  const content: StoryEntry = $state(JSON.parse(storage));
+  let element = $state();
 
   function addContent(event: CustomEvent) {
     updateStore(event.detail.output, event.detail.type);
@@ -48,13 +45,13 @@
 
   function updateStore(text: string, type: string) {
     if (type !== 'start') {
-      $content[Date.now() - 1000] = {
+      content[Date.now() - 1000] = {
         output: md.render(question),
         type: 'input' as Type,
       };
     }
     if (type !== 'input') {
-      $content[Date.now()] = {
+      content[Date.now()] = {
         output: text,
         type: type as Type,
       };
@@ -93,8 +90,8 @@
       guidance: 'Situation is beyond all control',
     },
   ];
-  let status: number | null = null;
-  let roll;
+  let status: number | null = $state(null);
+  let roll: DiceRoll | undefined = $state();
 
   function startSession() {
     roll = new DiceRoll('1d6');
@@ -112,7 +109,7 @@
   <ToggleContent hide={false}>
     <span slot="title">Story Mode</span>
 
-    <Content {content} on:start={startSession} />
+    <Content {content} start={startSession} />
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">
       <textarea
@@ -121,7 +118,7 @@
         bind:value={question}
         class="w-full px-3 py-2 mb-2 text-orange-900 border border-orange-900"
         placeholder="Question, task or text"
-      />
+      ></textarea>
 
       <div class="flex justify-center gap-2 mb-2">
         <OracleButton on:click={addContent} />
@@ -134,7 +131,7 @@
       </div>
     </div>
 
-    <div bind:this={element} />
+    <div bind:this={element} ></div>
   </ToggleContent>
 </div>
 

@@ -24,16 +24,12 @@
       </Link>
     </nav>
     <section>
-      <Route path="/" component={Story} />
-      <Route path="/change-log" component={ChangeLog} />
+      <Route path="/"><Story /></Route>
+      <Route path="/change-log"><ChangeLog /></Route>
     </section>
   </Router>
 </div>
 
 <style lang="postcss">
   @reference './app.css';
-  
-  .active {
-    @apply bg-gray-700 text-gray-100 border-gray-100;
-  }
 </style>
