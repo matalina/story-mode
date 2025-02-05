@@ -1,7 +1,13 @@
 <div class="">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
-  <h4>v.1.250205.04</h4>
+  <h4>v.1.0.1</h4>
+
+  <ul>
+    <li>Fixed min height of content box</li>
+  </ul>
+
+  <h4>v.1.0.0</h4>
 
   <ul>
     <li>Fixed remember content bug</li>
@@ -10,20 +16,20 @@
     <li>Fixed overflow issue</li>
   </ul>
 
-  <h4>v.1.250205.03</h4>
+  <h4>v.0.1.3</h4>
 
   <ul>
     <li>Fixed reversed oracle and dcTable check tables</li>
   </ul>
 
-  <h4>v.1.250205.02</h4>
+  <h4>vv.0.1.2</h4>
 
   <ul>
     <li>Added PWA for local install</li>
     <li>Changed Icon/Logo and color scheme (stone)</li>
   </ul>
 
-  <h4>v.1.250205.01</h4>
+  <h4>v.0.1.1</h4>
 
   <ul>
     <li>Converted to Svelte 5 and updated all packages</li>
@@ -31,7 +37,7 @@
     <li>Minor Cosmetic Changes</li>
   </ul>
 
-  <h4>v.1.250204.01</h4>
+  <h4>v.0.1.0</h4>
 
   <ul>
     <li>Initial Release</li>

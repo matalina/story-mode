@@ -53,7 +53,7 @@
   }
 </script>
 
-<div bind:this={element} class="grow overflow-auto max-h-[360px]">
+<div bind:this={element} class="grow overflow-auto max-h-[360px] min-h-[360px]">
   {#each Object.keys(content) as key}
     <div class={`entry ${classStyle(content[key].type)} flex`}>
       <div class="grow">{@html content[key].output}</div>
