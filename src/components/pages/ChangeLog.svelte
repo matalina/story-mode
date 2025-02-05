@@ -1,6 +1,12 @@
 <div class="">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.250205.03</h4>
+
+  <ul>
+    <li>Fixed reversed oracle and dcTable check tables</li>
+  </ul>
+
   <h4>v.1.250205.02</h4>
 
   <ul>

@@ -54,29 +54,29 @@ export interface MinMaxRow {
   description: string | Function;
 }
 
+  export const dcTable: RandomTable = {
+    name: 'DC Table',
+    description: 'Skill/Task checks',
+    diceFormula: '1d20',
+  table: [
+    { min: 1, max: 1, description: 'Fail, and' },
+    { min: 2, max: '-6', description: 'Fail, but' },
+    { min: '+5', max: '-1', description: 'Success, but' },
+    { min: '+0', max: '+4', description: 'Success' },
+    { min: '+5', max: 20, description: 'Success, and' },
+  ],
+}
+
 export const oracle: RandomTable = {
   name: 'Oracle',
   description: 'Answer to Yes/No questions',
   diceFormula: '1d20',
   table: [
     { min: 1, max: 1, description: 'No, and' },
-    { min: 2, max: '-6', description: 'No, but' },
-    { min: '+5', max: '-1', description: 'Yes, but' },
-    { min: '+0', max: '+4', description: 'Yes' },
-    { min: '+5', max: 20, description: 'Yes, and' },
-  ],
-}
-
-export const dcTable: RandomTable = {
-  name: 'DC Table',
-  description: 'Skill/Task checks',
-  diceFormula: '1d20',
-  table: [
-    { min: 1, max: 1, description: 'Fail, and' },
-    { min: 2, max: 2, description: 'Fail, but' },
-    { min: 3, max: 14, description: 'Success, but' },
-    { min: 15, max: 19, description: 'Success' },
-    { min: 20, max: null, description: 'Success, and' },
+    { min: 2, max: 2, description: 'No, but' },
+    { min: 3, max: 14, description: 'Yes, but' },
+    { min: 15, max: 19, description: 'Yes' },
+    { min: 20, max: null, description: 'Yes, and' },
   ],
 }
 
