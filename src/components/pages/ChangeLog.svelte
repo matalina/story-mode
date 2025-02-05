@@ -1,20 +1,30 @@
-<script lang="ts">
-  import Markdown from '../ui/Markdown.svelte';
-</script>
+<div class="">
+  <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
-<div class="p-3 mb-3 prose border rounded-xl">
-  <h3>Change Log</h3>
+  <h4>v.1.250205.01</h4>
 
-  <Markdown
-    small={true}
-    markdown={`
-#### 1.250204.01
-* Initial Release
-* Only Story Mode & Change Log
-  `}
-  />
+  <ul>
+    <li>Converted to Svelte 5 and updated all packages</li>
+    <li>Updated Oracle & Check/Task tables</li>
+    <li>Minor Cosmetic Changes</li>
+  </ul>
+
+  <h4>v.1.250204.01</h4>
+
+  <ul>
+    <li>Initial Release</li>
+    <li>Only Change log & Story Mode</li>
+  </ul>
 </div>
 
 <style>
   @reference '../../app.css';
+
+  h4 {
+    @apply text-2xl mb-3;
+  }
+
+  ul {
+    @apply list-disc list-inside mb-3;
+  }
 </style>

@@ -6,7 +6,7 @@
     count?: number;
   }
 
-  let { click, count = 3 }:KeywordsButtonProps = $props();
+  let { click, count = 3, hasQuestion }:KeywordsButtonProps = $props();
 
   let keywords: string[] = $state([]);
 
@@ -17,7 +17,7 @@
 </script>
 
 
-<button onclick={generate} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">Ask Keywords</button>
+<button onclick={generate} disabled={!hasQuestion ? true : undefined}>Ask Keywords</button>
 
 <style>
     @reference '../../app.css';

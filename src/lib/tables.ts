@@ -11,9 +11,32 @@ export function rollOnTable(table: RandomTable) {
       typeof row.description === 'string'
         ? row.description.toString()
         : row.description().toString();
-    if (row.min === null && (row.max && total <= row.max)) description = desc;
-    else if (row.max === null && (row.min && total >= row.min)) description = desc;
-    else if ((row.min && total >= row.min) && (row.max && total <= row.max)) description = desc;
+        if (row.min === null && (row.max && total <= (row.max as number))) description = desc;
+        else if (row.max === null && (row.min && total >= (row.min as number))) description = desc;
+        else if ((row.min && total >= (row.min as number)) && (row.max && total <= (row.max as number))) description = desc;
+  }
+  return { description, roll };
+}
+
+export function rollOnDCTable(dc: number) {
+  const table = dcTable;
+  const roll = new DiceRoll(table.diceFormula);
+  const total = roll.total;
+  let description = '';
+  console.log(roll, total);
+
+  for (let i in table.table) {
+    const row = table.table[i];
+    const min = typeof row.min === 'string' ? dc + parseInt(row.min as string) : row.min;
+    const max = typeof row.max === 'string' ? dc + parseInt(row.max as string) : row.max;
+    console.log(min, max);
+    const desc =
+      typeof row.description === 'string'
+        ? row.description.toString()
+        : row.description().toString();
+    if (min === null && (max && total <= (max as number))) description = desc;
+    else if (max === null && (min && total >= (min as number))) description = desc;
+    else if ((min && total >= (min as number)) && (max && total <= (max as number))) description = desc;
   }
   return { description, roll };
 }
@@ -26,8 +49,8 @@ export interface RandomTable {
 }
 
 export interface MinMaxRow {
-  min: number | null;
-  max: number | null;
+  min: number | string | null;
+  max: number | string | null;
   description: string | Function;
 }
 
@@ -37,23 +60,23 @@ export const oracle: RandomTable = {
   diceFormula: '1d20',
   table: [
     { min: 1, max: 1, description: 'No, and' },
-    { min: 2, max: 2, description: 'No, but' },
-    { min: 3, max: 14, description: 'Yes, but' },
-    { min: 15, max: 19, description: 'Yes' },
-    { min: 20, max: 20, description: 'Yes, and' },
+    { min: 2, max: '-6', description: 'No, but' },
+    { min: '+5', max: '-1', description: 'Yes, but' },
+    { min: '+0', max: '+4', description: 'Yes' },
+    { min: '+5', max: 20, description: 'Yes, and' },
   ],
 }
 
-export const check: RandomTable = {
-  name: 'Check',
-  description: 'Skill/Task chekcs',
+export const dcTable: RandomTable = {
+  name: 'DC Table',
+  description: 'Skill/Task checks',
   diceFormula: '1d20',
   table: [
     { min: 1, max: 1, description: 'Fail, and' },
     { min: 2, max: 2, description: 'Fail, but' },
     { min: 3, max: 14, description: 'Success, but' },
     { min: 15, max: 19, description: 'Success' },
-    { min: 20, max: 20, description: 'Success, and' },
+    { min: 20, max: null, description: 'Success, and' },
   ],
 }
 

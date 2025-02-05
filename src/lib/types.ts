@@ -1,3 +1,4 @@
 export interface ButtonProps {
-  click?: (args: any) => void;
+  click: (args: any) => void;
+  hasQuestion: boolean;
 }

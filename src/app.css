@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+
+html, body, #app {
+  @apply h-dvh;
+}
+
+button {
+  @apply py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400 disabled:bg-orange-100 disabled:cursor-not-allowed;
+}
+
+input {
+  @apply py-2 px-3 border border-orange-900 text-orange-900
+}
+
+j
+h4 {
+  @apply text-2xl font-bold;
+}

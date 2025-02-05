@@ -9,24 +9,23 @@
 
 <div id="app" class="mx-auto lg:w-1/3">
   <Router {url}>
-    <nav class="flex items-center w-full p-3">
-      <div class="flex flex-grow text-lg">
-        <Link to="/">
-          <div
-            class="px-3 py-2 mr-2 text-gray-900 border border-gray-900 focus:bg-gray-200 hover:bg-gray-200"
-          >
-            <img src={magicBook} alt="Story Mode" class="h-4" />
-          </div>
+    <div class="flex flex-col p-3 border h-dvh">
+      <header class="flex justify-between items-center mb-3">
+        <Link to="/" class="flex gap-3 items-center">
+          <img src={magicBook} alt="Story Mode" class="h-8 mt-2" />
+          <h2 class="text-3xl font-bold">Story Mode</h2>
         </Link>
-      </div>
-      <Link class="p-2 text-xs text-gray-500" to="/change-log">
-        v1.250204.01
-      </Link>
-    </nav>
-    <section>
-      <Route path="/"><Story /></Route>
-      <Route path="/change-log"><ChangeLog /></Route>
-    </section>
+        <div>
+          <Link class="p-2 text-xs text-gray-500" to="/change-log">
+            v1.250204.01
+          </Link>
+        </div>
+      </header>
+      <section class="grow">
+        <Route path="/"><Story /></Route>
+        <Route path="/change-log"><ChangeLog /></Route>
+      </section>
+    </div>
   </Router>
 </div>
 

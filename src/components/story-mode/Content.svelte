@@ -56,15 +56,13 @@
   }
 </script>
 
-<div bind:this={element} style="overflow:auto; height:400px;">
+<div bind:this={element} style="overflow:auto;min-height:400px;" class="grow">
   {#each Object.keys(content) as key}
     <div class={`entry ${classStyle(content[key].type)} flex`}>
-      <div class="flex-grow">{@html content[key].output}</div>
+      <div class="grow">{@html content[key].output}</div>
       <div class="p-2">
         <!-- svelte-ignore a11y_consider_explicit_label -->
-        <button onclick={() => deleteEntry(key)}
-          ><i class="fa-light fa-square-xmark"></i></button
-        >
+        <button onclick={() => deleteEntry(key)} style="background: transparent; padding: 0 6px 3px; ">&times;</button>
       </div>
     </div>
   {/each}
@@ -95,7 +93,7 @@
     @apply disabled:bg-orange-100 disabled:border-orange-700 disabled:text-orange-700 disabled:cursor-not-allowed;
   }
   .entry {
-    @apply mb-2 border-b;
+    @apply pb-3 mb-2 border-b;
   }
   .input-mode {
   }

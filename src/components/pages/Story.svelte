@@ -7,7 +7,6 @@
   import KeywordsButton from '../story-mode/KeywordsButton.svelte';
   import OracleButton from '../story-mode/OracleButton.svelte';
   import TaskButton from '../story-mode/TaskButton.svelte';
-  import ToggleContent from './../ui/ToggleContent.svelte';
 
   const md = new MarkdownIt({
     html: false,
@@ -17,6 +16,7 @@
   });
 
   let question = $state('');
+  let hasQuestion = $derived(question.length > 0);
 
   const types = [
     'input',
@@ -99,18 +99,13 @@
 
     const output =
       `<em class="text-xs italic">${statuses[status - 1].guidance}</em><br/>` +
-      `<strong>Adventure Status:</strong> ${statuses[status - 1].status} ${status} (${statuses[status - 1].target})`;
+      `<strong>Scene Status:</strong> ${statuses[status - 1].status} ${status} (${statuses[status - 1].target})`;
 
     updateStore(output, 'start');
   }
 </script>
 
-<div class="relative">
-  <ToggleContent hide={false}>
-    {#snippet title()}
-      Story Mode
-    {/snippet}
-
+<div class="relative flex flex-col justify-between h-full">
     <Content {content} start={startSession} />
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">
@@ -123,19 +118,19 @@
       ></textarea>
 
       <div class="flex justify-center gap-2 mb-2">
-        <OracleButton click={addContent} />
-        <TaskButton click={addContent} />
-        <InputButton click={addContent} />
+        <OracleButton click={addContent} {hasQuestion}/>
+        <TaskButton click={addContent} status = {status ? status: 0} {hasQuestion}/>
+        <InputButton click={addContent} {hasQuestion} />
       </div>
       <div class="flex justify-center gap-2">
-        <DiceButton click={addContent} />
-        <KeywordsButton click={addContent} />
+        <DiceButton click={addContent} {hasQuestion} />
+        <KeywordsButton click={addContent} {hasQuestion}/>
       </div>
     </div>
 
     <div bind:this={element} ></div>
-  </ToggleContent>
-</div>
+  </div>
+
 
 <style>
   @reference '../../app.css';
