@@ -1,16 +1,16 @@
 <script lang="ts">
   import { DiceRoller } from '@dice-roller/rpg-dice-roller';
-  import { createEventDispatcher } from 'svelte';
+  import type { ButtonProps } from '../../lib/types';
 
-  const dispatch = createEventDispatcher();
+  let { click }:ButtonProps = $props();
 
-  let notation = '1d20';
+  let notation = $state('1d20');
 
   function roll() {
     const roller = new DiceRoller();
     roller.roll(notation);
     
-    dispatch('click',{
+    click?.({
       type: 'roll',
       output: roller.output,
     });
@@ -20,7 +20,7 @@
 
 <div class="flex">
   <input bind:value={notation} class="py-2 px-3 border w-40 border-orange-900 text-orange-900" />
-  <button on:click={roll} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">
+  <button onclick={roll} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">
     Roll
   </button>
 </div>

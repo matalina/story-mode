@@ -38,8 +38,8 @@
   const content: StoryEntry = $state(JSON.parse(storage));
   let element = $state();
 
-  function addContent(event: CustomEvent) {
-    updateStore(event.detail.output, event.detail.type);
+  function addContent({output, type}: {output: string, type: string}) {
+    updateStore(output, type);
     question = '';
   }
 
@@ -107,7 +107,9 @@
 
 <div class="relative">
   <ToggleContent hide={false}>
-    <span slot="title">Story Mode</span>
+    {#snippet title()}
+      Story Mode
+    {/snippet}
 
     <Content {content} start={startSession} />
 
@@ -121,13 +123,13 @@
       ></textarea>
 
       <div class="flex justify-center gap-2 mb-2">
-        <OracleButton on:click={addContent} />
-        <TaskButton on:click={addContent} />
-        <InputButton on:click={addContent} />
+        <OracleButton click={addContent} />
+        <TaskButton click={addContent} />
+        <InputButton click={addContent} />
       </div>
       <div class="flex justify-center gap-2">
-        <DiceButton on:click={addContent} />
-        <KeywordsButton on:click={addContent} />
+        <DiceButton click={addContent} />
+        <KeywordsButton click={addContent} />
       </div>
     </div>
 

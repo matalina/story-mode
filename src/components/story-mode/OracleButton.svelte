@@ -1,9 +1,9 @@
 <script lang="ts">
   import { DiceRoll } from '@dice-roller/rpg-dice-roller';
-  import { createEventDispatcher } from 'svelte';
   import { getRandomKeywords } from '../../lib/keywords';
+  import type { ButtonProps } from '../../lib/types';
 
-  const dispatch = createEventDispatcher();
+  let { click }:ButtonProps = $props();
 
   const oracle = [
     [1, 1, 'No, and'],
@@ -13,13 +13,13 @@
     [20, 20, 'Yes, and'],
   ];
 
-  let question = '';
-  let oldQuestion = question;
-  let answer = '';
-  let roll;
-  let ask;
-  let isAndOrBut = false;
-  let keywords = [];
+  let question = $state('');
+  let oldQuestion = $state('');
+  let answer = $state('');
+  let roll: DiceRoll| undefined = $state();
+  let ask = $state(0);
+  let isAndOrBut = $state(false);
+  let keywords:string[] = $state([]);
 
   function getAnswer() {
     reset();
@@ -33,7 +33,7 @@
     }
     if (ask > 20) return 'Yes, and';
     for (let i in oracle) {
-      const range = oracle[i];
+      const range = oracle[i] as number[];
       if (ask >= range[0] && ask <= range[1]) answer = range[2].toString();
     }
     if (
@@ -50,7 +50,7 @@
       `${isAndOrBut ? `<br/>${keywords.join(', ')}` : ''}` +
       ``;
 
-    dispatch('click', {
+    click?.({
       output,
       type: 'oracle',
     });
@@ -60,7 +60,7 @@
     answer = '';
     question = '';
     oldQuestion = '';
-    roll = 0;
+    roll = undefined;
     ask = 0;
     keywords = [];
     isAndOrBut = false;
@@ -68,7 +68,7 @@
 </script>
 
 <button
-  on:click={getAnswer}
+  onclick={getAnswer}
   class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
   >Ask Oracle</button
 >

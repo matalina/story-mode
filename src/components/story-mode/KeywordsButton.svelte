@@ -1,20 +1,23 @@
-<script type="ts">
-import { getRandomKeywords } from '../../lib/keywords';
-import { createEventDispatcher } from "svelte";
+<script lang="ts">
+  import { getRandomKeywords } from '../../lib/keywords';
+  import type { ButtonProps } from '../../lib/types';
 
-const dispatch = createEventDispatcher();
+  interface KeywordsButtonProps extends ButtonProps {
+    count?: number;
+  }
 
-export let count = 3;
-$: keywords = [];
+  let { click, count = 3 }:KeywordsButtonProps = $props();
 
-function generate() {
+  let keywords: string[] = $state([]);
+
+  function generate() {
     keywords = getRandomKeywords(count);
-    dispatch('click', {type: 'keyword', output: keywords.join(', ')})
-}
+    click?.({type: 'keyword', output: keywords.join(', ')})
+  }
 </script>
 
 
-<button on:click={generate} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">Ask Keywords</button>
+<button onclick={generate} class="py-2 px-3 border bg-orange-300 border-orange-900 text-orange-900 hover:bg-orange-400 focus:bg-orange-400">Ask Keywords</button>
 
 <style>
     @reference '../../app.css';
