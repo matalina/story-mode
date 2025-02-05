@@ -75,16 +75,7 @@
 
 <style>
   @reference '../../app.css';
-
-  h4 {
-    @apply text-2xl mb-3;
-  }
-
-  ul {
-    @apply list-disc list-inside mb-3;
-  }
-
-  p {
+  p, table {
     @apply mb-3;
   }
 

@@ -1,5 +1,11 @@
-<div class="">
+<div class="overflow-auto max-h-[600px]">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
+
+  <h4>v.1.0.2</h4>
+
+  <ul>
+    <li>Fixed Change Log & About page issues</li>
+  </ul>
 
   <h4>v.1.0.2</h4>
 
@@ -29,7 +35,7 @@
     <li>Fixed reversed oracle and dcTable check tables</li>
   </ul>
 
-  <h4>vv.0.1.2</h4>
+  <h4>v.0.1.2</h4>
 
   <ul>
     <li>Added PWA for local install</li>
