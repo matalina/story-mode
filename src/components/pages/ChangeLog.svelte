@@ -1,6 +1,15 @@
 <div class="">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.250205.04</h4>
+
+  <ul>
+    <li>Fixed remember content bug</li>
+    <li>Added about page</li>
+    <li>Added github link</li>
+    <li>Fixed overflow issue</li>
+  </ul>
+
   <h4>v.1.250205.03</h4>
 
   <ul>

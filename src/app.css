@@ -2,7 +2,7 @@
 
 
 html, body, #app {
-  @apply h-dvh text-stone-700;
+  @apply h-full text-stone-700;
 }
 
 button {

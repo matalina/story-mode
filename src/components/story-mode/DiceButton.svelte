@@ -19,7 +19,7 @@
 </script>
 
 <div class="flex">
-  <input bind:value={notation} />
+  <input bind:value={notation} class="w-40"/>
   <button
     onclick={roll}
     disabled={!hasQuestion ? true : undefined}

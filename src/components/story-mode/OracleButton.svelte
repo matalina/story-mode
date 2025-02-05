@@ -50,7 +50,7 @@
 <button
   onclick={getAnswer}
   disabled={!hasQuestion ? true : undefined}
-  >Ask Oracle</button
+  >Yes/No</button
 >
 
 <style>

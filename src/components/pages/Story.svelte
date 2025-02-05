@@ -110,7 +110,7 @@
   }
 </script>
 
-<div class="relative flex flex-col justify-between h-full">
+<div class="relative flex flex-col justify-between">
     <Content {content} start={startSession}  clear={clearSession}/>
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">

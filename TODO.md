@@ -1,12 +1,12 @@
 # To Do List
 
 Bugs
-- [ ] Fix bounding box and buttons
-- [ ] Content does not remain after a refresh (should be in local storage!!!)
+- [X] Fix bounding box and buttons
+- [X] Content does not remain after a refresh (should be in local storage!!!)
 
-New Features 
-- [ ] Add link to github repo
-- [ ] Add About page
+New Features
+- [X] Add link to github repo
+- [X] Add About page
 
 Initial Release
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)

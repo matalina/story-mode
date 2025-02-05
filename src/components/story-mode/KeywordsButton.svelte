@@ -17,7 +17,7 @@
 </script>
 
 
-<button onclick={generate} disabled={!hasQuestion ? true : undefined}>Ask Keywords</button>
+<button onclick={generate} disabled={!hasQuestion ? true : undefined}>Keywords</button>
 
 <style>
     @reference '../../app.css';

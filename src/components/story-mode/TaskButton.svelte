@@ -49,7 +49,7 @@
 
 <div class="flex">
   <input type="text" bind:value={value} class="w-9"/>
-  <button onclick={generate} disabled={!hasQuestion ? true : undefined}>Do Task</button>
+  <button onclick={generate} disabled={!hasQuestion ? true : undefined}>Check</button>
 </div>
 
 <style>

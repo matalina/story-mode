@@ -7,6 +7,7 @@
     start: () => void;
     clear: () => void;
   }
+
   let { content, start, clear }: ContentProps = $props();
 
   const turndown = new TurndownService({
@@ -52,7 +53,7 @@
   }
 </script>
 
-<div bind:this={element} style="overflow:auto; min-height:400px;" class="grow">
+<div bind:this={element} class="grow overflow-auto max-h-[360px]">
   {#each Object.keys(content) as key}
     <div class={`entry ${classStyle(content[key].type)} flex`}>
       <div class="grow">{@html content[key].output}</div>
