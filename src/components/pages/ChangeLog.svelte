@@ -1,7 +1,7 @@
 <div class="overflow-auto max-h-[600px]">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
-  <h4>v.1.0.2</h4>
+  <h4>v.1.0.3</h4>
 
   <ul>
     <li>Fixed Change Log & About page issues</li>

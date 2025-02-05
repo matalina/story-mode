@@ -15,8 +15,8 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon-180x180.png', 'logo.svg','pwa-64x64.png','pwa-192x192.png','pwa-512x512.png','maskable-icon-512x512.png'],
       manifest: {
-        name: 'Store Mode Solo',
-        short_name: 'Store Mode Solo',
+        name: 'Story Mode Solo',
+        short_name: 'Story Mode Solo',
         theme_color: '#ffffff',
         description: 'a simple store mode solo rpg app',
         icons: [
