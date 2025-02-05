@@ -34,8 +34,7 @@
     };
   }
 
-  const storage = $state(localStorage.content || `{}`);
-  const content: StoryEntry = $state(JSON.parse(storage));
+  let content: StoryEntry = $state(JSON.parse(localStorage.content || `{}`));
   let element = $state();
 
   function addContent({output, type}: {output: string, type: string}) {
@@ -56,6 +55,7 @@
         type: type as Type,
       };
     }
+    localStorage.content = JSON.stringify(content);
   }
 
   const statuses = [
@@ -103,10 +103,15 @@
 
     updateStore(output, 'start');
   }
+
+  function clearSession() {
+    content = {};
+    localStorage.content = JSON.stringify(content);
+  }
 </script>
 
 <div class="relative flex flex-col justify-between h-full">
-    <Content {content} start={startSession} />
+    <Content {content} start={startSession}  clear={clearSession}/>
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">
       <textarea

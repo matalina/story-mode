@@ -5,8 +5,9 @@
   interface ContentProps {
     content: any;
     start: () => void;
+    clear: () => void;
   }
-  let { content, start }: ContentProps = $props();
+  let { content, start, clear }: ContentProps = $props();
 
   const turndown = new TurndownService({
         headingStyle: 'atx',
@@ -35,11 +36,6 @@
   const scrollToBottom = async (node: HTMLElement, length?: number) => {
     node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
   };
-
-  function clearSession() {
-    localStorage.removeItem('content');
-    content = {};
-  }
 
   function copySession() {
     if (navigator.clipboard) {
@@ -77,7 +73,7 @@
     disabled={!empty}
     class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
     class:disable={!empty}
-    onclick={clearSession}>Clear</button
+    onclick={clear}>Clear</button
   >
   <button
     disabled={!empty}

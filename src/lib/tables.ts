@@ -23,13 +23,12 @@ export function rollOnDCTable(dc: number) {
   const roll = new DiceRoll(table.diceFormula);
   const total = roll.total;
   let description = '';
-  console.log(roll, total);
 
   for (let i in table.table) {
     const row = table.table[i];
     const min = typeof row.min === 'string' ? dc + parseInt(row.min as string) : row.min;
     const max = typeof row.max === 'string' ? dc + parseInt(row.max as string) : row.max;
-    console.log(min, max);
+
     const desc =
       typeof row.description === 'string'
         ? row.description.toString()
