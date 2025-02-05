@@ -31,18 +31,3 @@ You can add any text you like at any point in the game.  Add Flavor, tell the st
 If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.
 
 Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 700 words.
-
-## To Do List
-- [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
-- [X] Rewrite oracle/task to use Roll on Table
-- [X] Change Adventure Status to Scene Status
-- [X] Update the Oracle Rolls
-- [X] Automatically set the Task to the Adventure Status Level! (default to 2 if the scene has not been set and the button is clicked)
-- [X] Don't allow Dice Rolls to have an empty Text field (or omit it from the log)
-- [X] Don't allow keywords to have an empty Text field (or omit it from the log)
-
-## Cypher System Open License
-
-This product is an independent production and is not affiliated with Monte Cook Games, LLC. It is published under the Cypher System Open License, found at http://csol.montecookgames.com.
-
-CYPHER SYSTEM and its logo are trademarks of Monte Cook Games, LLC in the U.S.A. and other countries. All Monte Cook Games characters and character names, and the distinctive likenesses thereof, are trademarks of Monte Cook Games, LLC.
