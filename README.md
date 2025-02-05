@@ -30,7 +30,7 @@ You can add any text you like at any point in the game.  Add Flavor, tell the st
 
 If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.
 
-Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 400 words.
+Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 700 words.
 
 ## To Do List
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
