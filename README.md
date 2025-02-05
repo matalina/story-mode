@@ -16,13 +16,21 @@ The Oracle is based on a d20 roll with the following outcome table:
 | 15 - 19 | Yes      |
 | 20      | Yes, and |
 
-If your characters need to preform a task that you want to randomize, just say what you are going to do and click the Do Task button.  The Task will automatically be set to the Difficulty of the Scene.
+If your characters need to preform a task that you want to randomize, just say what you are going to do and click the Do Task button.  The Task will automatically be set to the Difficulty of the Scene and the outcome based on the following table
+
+| d20           | Result        |
+| ------------- | ------------- |
+| 1             | Fail, and     |
+| 2 to DC-6     | Fail, but     |
+| DC-5 to DC-1  | Success, but  |
+| DC to DC+5    | Success       |
+| DC+6+         | Success, and  |
 
 You can add any text you like at any point in the game.  Add Flavor, tell the story.
 
 If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.
 
-Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 400 words.
+Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 700 words.
 
 ## To Do List
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
