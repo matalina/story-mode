@@ -1,6 +1,13 @@
 <div class="">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.0.2</h4>
+
+  <ul>
+    <li>Fixed About page text</li>
+  </ul>
+
+
   <h4>v.1.0.1</h4>
 
   <ul>

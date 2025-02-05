@@ -2,7 +2,6 @@
   <h3 class="text-3xl font-bold mb-3">About</h3>
 
   <article class="markdown-body entry-content container-lg" itemprop="text">
-    <h1 tabindex="-1" class="heading-element" dir="auto">Story Mode Quick and Dirty Cypher System Based Solo Game
     <p dir="auto">Story Mode is a quick and dirty story based game that uses some of the basic mechanics of the Cypher System to help you randomly tell a story.</p>
     <p dir="auto">You start each scene with a target rating, this is the difficulty of all elements in the scene.  The Scene Status is a d6 roll and the target number is 3 times that roll.  Simple and Easy!</p>
     <p dir="auto">You don't need any character sheets, rule-sets or anything other than your imagination and the ability to form yes and no questions.</p>
@@ -37,7 +36,7 @@
           </tr>
       </tbody>
     </table>
-    <p dir="auto">If your characters need to preform a task that you want to randomize, just say what you are going to do and click the Do Task button.  The Task will automatically be set to the Difficulty of the Scene and the outcome based on the following table</p>
+    <p dir="auto">If your characters need to preform a task that you want to randomize, just say what you are going to do and click the Check button.  The Task will automatically be set to the Difficulty of the Scene and the outcome based on the following table, but you can always change the value.</p>
     <table>
       <thead>
         <tr>
@@ -70,7 +69,7 @@
     </table>
     <p dir="auto">You can add any text you like at any point in the game.  Add Flavor, tell the story.</p>
     <p dir="auto">If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.</p>
-    <p dir="auto">Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 700 words.</p>
+    <p dir="auto">Need some random inspiration. Click Keywords and you'll get 3 from our list of over 700 words.</p>
   </article>
 </div>
 
