@@ -17,7 +17,7 @@
         </Link>
         <div>
           <Link class="p-2 text-xs text-gray-500" to="/change-log">
-            v1.250204.01
+            v1.250205.01
           </Link>
         </div>
       </header>
