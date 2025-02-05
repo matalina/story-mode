@@ -11,9 +11,9 @@ export function rollOnTable(table: RandomTable) {
       typeof row.description === 'string'
         ? row.description.toString()
         : row.description().toString();
-    if (row.min === null && total <= row.max) description = desc;
-    else if (row.max === null && total >= row.min) description = desc;
-    else if (total >= row.min && total <= row.max) description = desc;
+    if (row.min === null && (row.max && total <= row.max)) description = desc;
+    else if (row.max === null && (row.min && total >= row.min)) description = desc;
+    else if ((row.min && total >= row.min) && (row.max && total <= row.max)) description = desc;
   }
   return { description, roll };
 }
@@ -29,6 +29,32 @@ export interface MinMaxRow {
   min: number | null;
   max: number | null;
   description: string | Function;
+}
+
+export const oracle: RandomTable = {
+  name: 'Oracle',
+  description: 'Answer to Yes/No questions',
+  diceFormula: '1d20',
+  table: [
+    { min: 1, max: 1, description: 'No, and' },
+    { min: 2, max: 2, description: 'No, but' },
+    { min: 3, max: 14, description: 'Yes, but' },
+    { min: 15, max: 19, description: 'Yes' },
+    { min: 20, max: 20, description: 'Yes, and' },
+  ],
+}
+
+export const check: RandomTable = {
+  name: 'Check',
+  description: 'Skill/Task chekcs',
+  diceFormula: '1d20',
+  table: [
+    { min: 1, max: 1, description: 'Fail, and' },
+    { min: 2, max: 2, description: 'Fail, but' },
+    { min: 3, max: 14, description: 'Success, but' },
+    { min: 15, max: 19, description: 'Success' },
+    { min: 20, max: 20, description: 'Success, and' },
+  ],
 }
 
 export const weather: RandomTable = {

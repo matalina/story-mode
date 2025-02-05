@@ -25,7 +25,8 @@ If you need a dice roll for something we got you covered too. You can use it to 
 Need some random inspiration. Click the Random Keywords and you'll get 3 from our list of over 400 words.
 
 ## To Do List
-- [ ] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
+- [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
+- [ ] Rewrite oracle/task to use Roll on Table
 - [ ] Change Adventure Status to Scene Status
 - [ ] Update the Oracle Rolls
 - [ ] Automatically set the Task to the Adventure Status Level! (default to 2 if the scene has not been set and the button is clicked)
