@@ -56,7 +56,7 @@
   }
 </script>
 
-<div bind:this={element} style="overflow:auto;min-height:400px;" class="grow">
+<div bind:this={element} style="overflow:auto; min-height:400px;" class="grow">
   {#each Object.keys(content) as key}
     <div class={`entry ${classStyle(content[key].type)} flex`}>
       <div class="grow">{@html content[key].output}</div>
@@ -69,20 +69,20 @@
 </div>
 <div class="flex justify-end gap-2 mt-2">
   <button
-    class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
+    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
     class:disable={empty}
     onclick={start}>New Scene</button
   >
   <button
     disabled={!empty}
-    class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
+    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
     class:disable={!empty}
     onclick={clearSession}>Clear</button
   >
   <button
     disabled={!empty}
     class:disable={!empty}
-    class="px-3 py-2 text-orange-900 bg-orange-300 border border-orange-900 hover:bg-orange-400 focus:bg-orange-400"
+    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
     onclick={copySession}>Copy</button
   >
 </div>
@@ -90,7 +90,7 @@
 <style>
   @reference '../../app.css';
   .disable {
-    @apply disabled:bg-orange-100 disabled:border-orange-700 disabled:text-orange-700 disabled:cursor-not-allowed;
+    @apply disabled:bg-stone-100 disabled:border-stone-700 disabled:text-stone-700 disabled:cursor-not-allowed;
   }
   .entry {
     @apply pb-3 mb-2 border-b;

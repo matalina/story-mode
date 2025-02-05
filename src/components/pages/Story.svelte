@@ -113,7 +113,7 @@
         rows="3"
         id="question"
         bind:value={question}
-        class="w-full px-3 py-2 mb-2 text-orange-900 border border-orange-900"
+        class="w-full px-3 py-2 mb-2 text-stone-900 border border-stone-900"
         placeholder="Question, task or text"
       ></textarea>
 

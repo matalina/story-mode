@@ -1,6 +1,13 @@
 <div class="">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.250205.02</h4>
+
+  <ul>
+    <li>Added PWA for local install</li>
+    <li>Changed Icon/Logo and color scheme (stone)</li>
+  </ul>
+
   <h4>v.1.250205.01</h4>
 
   <ul>

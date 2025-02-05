@@ -1,6 +1,6 @@
 <script>
   import { Link, Route, Router } from 'svelte-routing';
-  import magicBook from './assets/magic-book.svg';
+  import Logo from './assets/logo.svg';
   import ChangeLog from './components/pages/ChangeLog.svelte';
   import Story from './components/pages/Story.svelte';
 
@@ -11,8 +11,8 @@
   <Router {url}>
     <div class="flex flex-col p-3 border h-dvh">
       <header class="flex justify-between items-center mb-3">
-        <Link to="/" class="flex gap-3 items-center">
-          <img src={magicBook} alt="Story Mode" class="h-8 mt-2" />
+        <Link to="/" class="flex gap-2 items-center">
+          <img src={Logo} alt="Story Mode" class="h-15" />
           <h2 class="text-3xl font-bold">Story Mode</h2>
         </Link>
         <div>
