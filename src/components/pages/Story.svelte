@@ -138,7 +138,7 @@
   }
 </script>
 
-<Content {content} refresh={refreshSession}/>
+<Content />
 <div class="flex flex-col gap-2">
   <Sidebar />
   <textarea

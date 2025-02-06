@@ -136,7 +136,7 @@
 </script>
 
 <div class="flex gap-2">
-  <NewSceneButton click={startSession} />
+  <NewSceneButton />
   <div class="w-3"></div>
   <OracleButton click={addContent} {hasQuestion}/>
   <TaskButton click={addContent} status = {status ? status: 0} {hasQuestion}/>
