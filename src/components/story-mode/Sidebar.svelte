@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Divider from './../ui/Divider.svelte';
 	import CopyButton from './CopyButton.svelte';
   import DiceButton from '../story-mode/DiceButton.svelte';
   import InputButton from '../story-mode/InputButton.svelte';
@@ -9,20 +10,20 @@
   import ClearButton from './ClearButton.svelte';
 </script>
 
-<div class="flex gap-2">
-  <NewSceneButton />
-  <div class="w-3"></div>
-  <OracleButton />
-  <TaskButton />
-  <div class="w-3"></div>
-  <ClearButton/>
-  <CopyButton/>
+<div class="flex gap-2 mt-2">
+  <NewSceneButton click={startSession} />
+  <Divider />
+  <OracleButton click={addContent} {hasQuestion}/>
+  <TaskButton click={addContent} status = {status ? status: 0} {hasQuestion}/>
+  <Divider />
+  <ClearButton click={clearSession} {hasContent}/>
+  <CopyButton {hasContent} click={copySession}/>
   </div>
 <div class="flex gap-2">
-  <DiceButton  />
-  <div class="w-3"></div>
-  <InputButton />
-  <KeywordsButton />
+  <DiceButton click={addContent} {hasQuestion} />
+  <Divider />
+  <InputButton click={addContent} {hasQuestion} />
+  <KeywordsButton click={addContent} {hasQuestion}/>
 </div>
 
 <style>

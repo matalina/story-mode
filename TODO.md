@@ -7,6 +7,7 @@ Bugs
 - [X] After a delete, when adding new content it doesn't update automatically
 - [ ] Boox doesn't load css for some reason (may be a manifest problem)
 - [X] Copy content adds the close button to the text
+- [ ] Button bar on small screens can be too wide
 
 New Features
 - [X] Add link to github repo
