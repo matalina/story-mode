@@ -1,6 +1,7 @@
 <script lang="ts" module>
   import { createContent } from './lib/content.svelte';
   export let content = createContent();
+  export let input = createInput();
 </script>
 
 <script>
@@ -9,6 +10,7 @@
   import Story from './components/pages/Story.svelte';
   import About from './components/pages/About.svelte';
   import Header from './components/ui/Header.svelte';
+  import { createInput } from './lib/input.svelte';
   export let url = '';
 </script>
 

@@ -141,11 +141,11 @@
   <OracleButton click={addContent} {hasQuestion}/>
   <TaskButton click={addContent} status = {status ? status: 0} {hasQuestion}/>
   <div class="w-3"></div>
-  <ClearButton click={clearSession} {hasContent}/>
-  <CopyButton {hasContent} click={copySession}/>
+  <ClearButton/>
+  <CopyButton/>
   </div>
 <div class="flex gap-2">
-  <DiceButton click={addContent} {hasQuestion} />
+  <DiceButton  />
   <div class="w-3"></div>
   <InputButton click={addContent} {hasQuestion} />
   <KeywordsButton click={addContent} {hasQuestion}/>

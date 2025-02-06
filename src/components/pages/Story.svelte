@@ -3,6 +3,7 @@
   import MarkdownIt from 'markdown-it';
   import Content from '../story-mode/Content.svelte';
   import TurndownService from 'turndown';
+  import Input from '../story-mode/Input.svelte';
 
   const md = new MarkdownIt({
     html: false,
@@ -79,12 +80,7 @@
 <Content />
 <div class="flex flex-col gap-2">
   <Sidebar />
-  <textarea
-    id="question"
-    bind:value={question}
-    class="w-full px-3 py-2 text-stone-900 border border-stone-900 h-[60px]"
-    placeholder="Question, task or text"
-  ></textarea>
+  <Input />
 </div>
 
 
