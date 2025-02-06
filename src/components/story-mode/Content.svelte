@@ -7,9 +7,10 @@
     content: any;
     start: () => void;
     clear: () => void;
+    refresh: () => void;
   }
 
-  let { content, start, clear }: ContentProps = $props();
+  let { content, start, clear, refresh }: ContentProps = $props();
 
   const turndown = new TurndownService({
         headingStyle: 'atx',
@@ -57,6 +58,8 @@
   function deleteEntry(key: string) {
     delete content[key];
     content = { ...content };
+    localStorage.content = JSON.stringify(content);
+    refresh();
   }
 </script>
 

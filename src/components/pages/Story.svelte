@@ -108,10 +108,14 @@
     content = {};
     localStorage.content = JSON.stringify(content);
   }
+
+  function refreshSession() {
+    content = JSON.parse(localStorage.content);
+  }
 </script>
 
 <div class="relative flex flex-col justify-between">
-    <Content {content} start={startSession}  clear={clearSession}/>
+    <Content {content} start={startSession}  clear={clearSession} refresh={refreshSession}/>
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">
       <textarea
