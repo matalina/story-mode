@@ -11,6 +11,7 @@ Bugs
 New Features
 - [X] Add link to github repo
 - [X] Add About page
+- [ ] Look at different more reliable layout
 
 Initial Release
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
