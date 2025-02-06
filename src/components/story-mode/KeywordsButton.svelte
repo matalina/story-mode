@@ -37,7 +37,3 @@
 >
   <img src={KeywordsIcon} alt="Keywords" class="h-[24px]"/>
 </button>
-
-<style>
-    @reference '../../app.css';
-  </style>

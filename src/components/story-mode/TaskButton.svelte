@@ -61,7 +61,3 @@
     <img src={CheckIcon} alt="Check" class="h-[24px]"/>
   </button>
 </div>
-
-<style>
-  @reference '../../app.css';
-</style>

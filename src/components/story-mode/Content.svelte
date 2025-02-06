@@ -44,17 +44,3 @@
   {/each}
 </div>
 
-<style>
-  @reference '../../app.css';
-
-  .content {
-    height: calc(100vh - 260px);
-  }
-
-  .disable {
-    @apply disabled:bg-stone-100 disabled:border-stone-700 disabled:text-stone-700 disabled:cursor-not-allowed;
-  }
-  .entry {
-    @apply pb-3 mb-2 border-b;
-  }
-</style>

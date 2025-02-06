@@ -1,22 +1,28 @@
 <script lang="ts">
-  import type { ButtonProps } from '../../lib/types';
   import MoreIcon from '../../assets/more.svg';
+  import {content } from '../../App.svelte';
+  import type { ContentData } from '../../lib/content.svelte';
+  import {input as data} from './Input.svelte';
 
-  let { click, hasQuestion }:ButtonProps = $props();
+  let input = $derived(data.value);
+  let hasQuestion = $derived(input !== '');
 
-  function getMore() {
-    click?.({type: 'input', output: ''})
+  function returnInput() {
+    const userInput: ContentData = {
+      type: 'input',
+      output: input,
+    };
+
+    content.add(userInput);
+
+    data.reset();
   }
 </script>
 
 <button
-  onclick={getMore}
+  onclick={returnInput}
   disabled={true}
   class="w-[48px] flex items-center justify-center"
 >
-  <img src={MoreIcon} alt="More"  class="h-[24px]"/>
+  <img src={MoreIcon} alt="Add Text"  class="h-[24px]"/>
 </button>
-
-<style>
-  @reference '../../app.css';
-</style>

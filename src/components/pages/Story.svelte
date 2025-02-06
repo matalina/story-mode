@@ -82,8 +82,3 @@
   <Sidebar />
   <Input />
 </div>
-
-
-<style>
-  @reference '../../app.css';
-</style>

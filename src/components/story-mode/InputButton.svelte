@@ -26,7 +26,3 @@
 >
   <img src={TextIcon} alt="Add Text"  class="h-[24px]"/>
 </button>
-
-<style>
-  @reference '../../app.css';
-</style>

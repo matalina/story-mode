@@ -68,7 +68,3 @@
 >
   <img src={OracleIcon} alt="Yes/No" class="h-[24px]"/>
 </button>
-
-<style>
-  @reference '../../app.css';
-</style>

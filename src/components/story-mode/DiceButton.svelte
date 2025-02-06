@@ -40,7 +40,3 @@
     <img src={RollIcon} alt="Roll" class="h-[24px]"/>
   </button>
 </div>
-
-<style>
-  @reference '../../app.css';
-</style>

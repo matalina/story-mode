@@ -27,7 +27,3 @@
   class="w-full px-3 py-2 text-stone-900 border border-stone-900 h-[60px]"
   placeholder="Question, task or text"
 ></textarea>
-
-<style>
-  @reference '../../app.css';
-</style>

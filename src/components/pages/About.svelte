@@ -72,17 +72,3 @@
     <p dir="auto">Need some random inspiration. Click Keywords and you'll get 3 from our list of over 700 words.</p>
   </article>
 </div>
-
-<style>
-  @reference '../../app.css';
-  p, table {
-    @apply mb-3;
-  }
-
-  table {
-    @apply border;
-  }
-  th, td {
-    @apply p-2 border;
-  }
-</style>

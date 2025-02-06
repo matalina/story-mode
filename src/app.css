@@ -13,7 +13,32 @@ input {
   @apply py-2 px-3 border border-stone-900 text-stone-900
 }
 
-j
 h4 {
   @apply text-2xl font-bold;
+}
+
+p, table {
+  @apply mb-3;
+}
+
+table {
+  @apply border;
+}
+th, td {
+  @apply p-2 border;
+}
+
+ul {
+  @apply list-disc list-inside mb-3;
+}
+
+.content {
+  height: calc(100vh - 260px);
+}
+
+.disable {
+  @apply disabled:bg-stone-100 disabled:border-stone-700 disabled:text-stone-700 disabled:cursor-not-allowed;
+}
+.entry {
+  @apply pb-3 mb-2 border-b;
 }

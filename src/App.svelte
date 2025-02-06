@@ -27,9 +27,7 @@
 </div>
 
 <style lang="postcss">
-  @reference './app.css';
-
-  .layout {
+ .layout {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 65px auto;

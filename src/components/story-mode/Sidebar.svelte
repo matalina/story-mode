@@ -8,6 +8,7 @@
   import TaskButton from '../story-mode/TaskButton.svelte';
   import NewSceneButton from './NewSceneButton.svelte';
   import ClearButton from './ClearButton.svelte';
+  import MoreButton from './MoreButton.svelte';
 </script>
 
 <div class="flex gap-2 mt-2">
@@ -24,8 +25,5 @@
   <Divider />
   <InputButton  />
   <KeywordsButton />
+  <MoreButton />
 </div>
-
-<style>
-  @reference '../../app.css';
-</style>
