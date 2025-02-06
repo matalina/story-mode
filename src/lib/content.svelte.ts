@@ -16,13 +16,21 @@ export function createContent() {
   function reset() {
     value = {};
     localStorage.setItem('content', JSON.stringify(value));
-    
+
   }
 
-  function add(data: ContentData) {
-    const timestamp = Date.now();
-    value[timestamp] = data;
-    localStorage.setItem('content', JSON.stringify(value));
+  function add(data: ContentData | ContentData[]) {
+    if (!Array.isArray(data)) {
+      data = [data];
+    }
+    for (const item of data) {
+      // wait 1 ms before writing to insure timestamp is different
+      setTimeout(() => {
+        const timestamp = Date.now();
+        value[timestamp] = item;
+        localStorage.setItem('content', JSON.stringify(value));
+      }, 1);
+    }
   }
 
   function remove(timestamp: number) {

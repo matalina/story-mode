@@ -1,16 +1,15 @@
 <script lang="ts">
   import { DiceRoller } from '@dice-roller/rpg-dice-roller';
   import RollIcon from '../../assets/d20.svg';
-  import { content, input as data } from '../../App.svelte';
+  import { content } from '../../App.svelte';
   import type { ContentData } from '../../lib/content.svelte';
+  import {input as data} from './Input.svelte';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');
   let notation = $state('1d20');
 
-  $inspect(input, hasQuestion)
-
-  function roll() {
+  async function roll() {
     const roller = new DiceRoller();
     roller.roll(notation);
 
@@ -25,13 +24,11 @@
       output: roller.output,
     };
 
-    content.add(userInput);
-    content.add(output);
+    console.log(userInput, output);
+    content.add([ userInput, output ]);
 
     data.reset();
   }
-
-  $inspect(data);
 </script>
 
 <div class="flex">

@@ -1,12 +1,15 @@
-<script lang="ts">
-  import { input } from '../../App.svelte';
+<script lang="ts" module>
+  import { createInput } from "../../lib/input.svelte";
 
+  export let input = createInput();
+</script>
+
+<script lang="ts">
   let question = $state('');
   let cleared = $derived(input.cleared);
 
   $effect(() => {
     if(cleared) {
-      console.log('cleared');
       question = '';
       input.emptied();
     }

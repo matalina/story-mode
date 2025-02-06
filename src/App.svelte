@@ -1,7 +1,6 @@
 <script lang="ts" module>
   import { createContent } from './lib/content.svelte';
   export let content = createContent();
-  export let input = createInput();
 </script>
 
 <script>
