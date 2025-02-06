@@ -11,19 +11,19 @@
 </script>
 
 <div class="flex gap-2 mt-2">
-  <NewSceneButton click={startSession} />
+  <NewSceneButton />
   <Divider />
-  <OracleButton click={addContent} {hasQuestion}/>
-  <TaskButton click={addContent} status = {status ? status: 0} {hasQuestion}/>
+  <OracleButton />
+  <TaskButton/>
   <Divider />
-  <ClearButton click={clearSession} {hasContent}/>
-  <CopyButton {hasContent} click={copySession}/>
+  <ClearButton/>
+  <CopyButton />
   </div>
 <div class="flex gap-2">
-  <DiceButton click={addContent} {hasQuestion} />
+  <DiceButton  />
   <Divider />
-  <InputButton click={addContent} {hasQuestion} />
-  <KeywordsButton click={addContent} {hasQuestion}/>
+  <InputButton  />
+  <KeywordsButton />
 </div>
 
 <style>

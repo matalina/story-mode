@@ -24,7 +24,6 @@
       output: roller.output,
     };
 
-    console.log(userInput, output);
     content.add([ userInput, output ]);
 
     data.reset();
