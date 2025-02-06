@@ -13,7 +13,7 @@
 
 <div id="app" class="mx-auto lg:w-1/2">
   <Router {url}>
-    <div class="flex flex-col p-3 border h-full">
+    <div class="layout p-3 border h-full">
       <header class="flex justify-between items-center mb-3">
         <Link to="/" class="flex gap-2 items-center">
           <img src={Logo} alt="Story Mode" class="h-15" />
@@ -29,7 +29,7 @@
           <a href="https://github.com/matalina/story-mode"><img src={GithubIcon} alt="Github" class="h-6"/></a>
         </div>
       </header>
-      <section class="grow">
+      <section class="">
         <Route path="/"><Story /></Route>
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
@@ -40,4 +40,10 @@
 
 <style lang="postcss">
   @reference './app.css';
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65px auto;
+  }
 </style>

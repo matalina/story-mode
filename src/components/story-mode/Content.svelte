@@ -62,42 +62,50 @@
     refresh();
   }
 </script>
-
-<div bind:this={element} class="grow overflow-auto max-h-[360px] min-h-[360px]">
-  {#each Object.keys(content) as key}
-    <div class={`entry ${classStyle(content[key].type)} flex items-center`}>
-      <div class="grow">{@html content[key].output}</div>
-      <div class="p-2">
-        <!-- svelte-ignore a11y_consider_explicit_label -->
-        <button onclick={() => deleteEntry(key)} style="border: 0; background: transparent; padding: 0;">
-          <img src={CloseIcon} alt="close" class="h-5"/>
-        </button>
+<div class="layout">
+  <div bind:this={element} class="content overflow-auto min-h-[300px] max-h-[350px]">
+    {#each Object.keys(content) as key}
+      <div class={`entry ${classStyle(content[key].type)} flex items-center`}>
+        <div class="grow">{@html content[key].output}</div>
+        <div class="p-2">
+          <!-- svelte-ignore a11y_consider_explicit_label -->
+          <button onclick={() => deleteEntry(key)} style="border: 0; background: transparent; padding: 0;">
+            <img src={CloseIcon} alt="close" class="h-5"/>
+          </button>
+        </div>
       </div>
-    </div>
-  {/each}
-</div>
-<div class="flex justify-end gap-2 mt-2">
-  <button
-    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
-    class:disable={empty}
-    onclick={start}>New Scene</button
-  >
-  <button
-    disabled={!empty}
-    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
-    class:disable={!empty}
-    onclick={clear}>Clear</button
-  >
-  <button
-    disabled={!empty}
-    class:disable={!empty}
-    class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
-    onclick={copySession}>Copy</button
-  >
+    {/each}
+  </div>
+  <div class="flex justify-end gap-2 mt-2">
+    <button
+      class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
+      class:disable={empty}
+      onclick={start}>New Scene</button
+    >
+    <button
+      disabled={!empty}
+      class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
+      class:disable={!empty}
+      onclick={clear}>Clear</button
+    >
+    <button
+      disabled={!empty}
+      class:disable={!empty}
+      class="px-3 py-2 text-stone-900 bg-stone-300 border border-stone-900 hover:bg-stone-400 focus:bg-stone-400"
+      onclick={copySession}>Copy</button
+    >
+  </div>
 </div>
 
 <style>
   @reference '../../app.css';
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 50px;
+  }
+
   .disable {
     @apply disabled:bg-stone-100 disabled:border-stone-700 disabled:text-stone-700 disabled:cursor-not-allowed;
   }

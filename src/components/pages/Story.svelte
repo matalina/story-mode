@@ -35,7 +35,6 @@
   }
 
   let content: StoryEntry = $state(JSON.parse(localStorage.content || `{}`));
-  let element = $state();
 
   function addContent({output, type}: {output: string, type: string}) {
     updateStore(output, type);
@@ -114,7 +113,7 @@
   }
 </script>
 
-<div class="relative flex flex-col justify-between">
+<div class="relative layout">
     <Content {content} start={startSession}  clear={clearSession} refresh={refreshSession}/>
 
     <div class="sticky top-0 flex flex-col mt-2 bg-white">
@@ -136,11 +135,15 @@
         <KeywordsButton click={addContent} {hasQuestion}/>
       </div>
     </div>
-
-    <div bind:this={element} ></div>
   </div>
 
 
 <style>
   @reference '../../app.css';
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 190px;
+  }
 </style>

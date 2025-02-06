@@ -4,7 +4,7 @@ Bugs
 - [X] Fix bounding box and buttons
 - [X] Content does not remain after a refresh (should be in local storage!!!)
 - [ ] Change layout from flexbox to grid layout to insure that the layout is 100% all the time.
-- [ ] After a delete, when adding new content it doesn't update automatically
+- [X] After a delete, when adding new content it doesn't update automatically
 - [ ] Boox doesn't load css for some reason (may be a manifest problem)
 - [X] Copy content adds the close button to the text
 
