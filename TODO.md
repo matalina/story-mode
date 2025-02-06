@@ -12,8 +12,8 @@ New Features
 - [X] Add link to github repo
 - [X] Add About page
 - [X] Look at different more reliable layout
-- [ ] Refactor with new layout
-  - [ ] Content "Store"
+- [X] Refactor with new layout
+  - [X] Content "Store"
 - [ ] Tooltips for icon buttons
 
 Would Like to Haves

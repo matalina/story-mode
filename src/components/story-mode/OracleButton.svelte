@@ -1,20 +1,21 @@
 <script lang="ts">
   import { DiceRoll } from '@dice-roller/rpg-dice-roller';
   import { getRandomKeywords } from '../../lib/keywords';
-  import type { ButtonProps } from '../../lib/types';
   import { oracle, rollOnTable } from '../../lib/tables';
   import OracleIcon from '../../assets/oracle.svg';
+  import {content } from '../../App.svelte';
+  import type { ContentData } from '../../lib/content.svelte';
+  import {input as data} from './Input.svelte';
 
-  let { click, hasQuestion }:ButtonProps = $props();
-
-  let question = $state('');
-  let answer = $state('');
-  let roll: DiceRoll| undefined = $state();
-  let ask = $state(0);
-  let isAndOrBut = $state(false);
-  let keywords:string[] = $state([]);
+  let input = $derived(data.value);
+  let hasQuestion = $derived(input !== '');
 
   function getAnswer() {
+    const userInput: ContentData = {
+      type: 'input',
+      output: input,
+    };
+
     reset();
     const result = rollOnTable(oracle);
     const answer = result.description;
@@ -32,11 +33,23 @@
       `${isAndOrBut ? `<br/>${keywords.join(', ')}` : ''}` +
       ``;
 
-    click?.({
+    const string: ContentData = {
       output,
       type: 'oracle',
-    });
+    };
+
+
+    content.add([ userInput, string ]);
+
+    data.reset();
   }
+
+  let question = $state('');
+  let answer = $state('');
+  let roll: DiceRoll| undefined = $state();
+  let ask = $state(0);
+  let isAndOrBut = $state(false);
+  let keywords:string[] = $state([]);
 
   function reset() {
     answer = '';

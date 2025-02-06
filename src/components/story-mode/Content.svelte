@@ -1,16 +1,14 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import CloseIcon from '../../assets/close.svg';
+  import { content as data } from '../../App.svelte';
+  import type { Content } from '../../lib/content.svelte';
 
-  interface ContentProps {
-    content: any;
-    refresh: () => void;
-  }
-
-  let { content, refresh }: ContentProps = $props();
+  let content: Content = $derived(data.value);
 
   let element: HTMLElement = $state({} as HTMLElement);
   let length = $derived(Object.keys(content).length);
+  let keys: number[] = $derived(Object.keys(content).map(Number));
 
   function classStyle(type: string) {
     return `${type}-mode`;
@@ -28,15 +26,12 @@
     node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
   };
 
-  function deleteEntry(key: string) {
-    delete content[key];
-    content = { ...content };
-    localStorage.content = JSON.stringify(content);
-    refresh();
+  function deleteEntry(key: number) {
+    data.remove(key);
   }
 </script>
 <div bind:this={element} class="w-full overflow-auto content">
-  {#each Object.keys(content) as key}
+  {#each keys as key}
     <div class={`entry ${classStyle(content[key].type)} flex items-center`}>
       <div class="grow">{@html content[key].output}</div>
       <div class="p-2">

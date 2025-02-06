@@ -1,14 +1,15 @@
+<script lang="ts" module>
+  import { createContent } from './lib/content.svelte';
+  export let content = createContent();
+</script>
+
 <script>
   import { Link, Route, Router } from 'svelte-routing';
-  import Logo from './assets/logo.svg';
   import ChangeLog from './components/pages/ChangeLog.svelte';
   import Story from './components/pages/Story.svelte';
-  import GithubIcon from './assets/github.svg';
-  import TimelineIcon from './assets/timeline.svg';
-  import InfoIcon from './assets/info.svg';
   import About from './components/pages/About.svelte';
   import Header from './components/ui/Header.svelte';
-
+  import { createInput } from './lib/input.svelte';
   export let url = '';
 </script>
 

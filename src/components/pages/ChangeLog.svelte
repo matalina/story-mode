@@ -1,6 +1,13 @@
 <div class="overflow-auto max-h-[600px]">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.1.0</h4>
+
+  <ul>
+    <li>New Layout</li>
+    <li>Refactored using external runes</li>
+  </ul>
+
   <h4>v.1.0.4</h4>
 
   <ul>
