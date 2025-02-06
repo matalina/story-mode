@@ -1,27 +1,22 @@
 <script lang="ts">
   import { getRandomKeywords } from '../../lib/keywords';
-  import type { ButtonProps } from '../../lib/types';
   import { rollOnDCTable } from '../../lib/tables';
   import CheckIcon from '../../assets/check.svg';
 
-  interface TaskButtonProps extends ButtonProps {
-    status: number;
-  }
+  import {content } from '../../App.svelte';
+  import type { ContentData } from '../../lib/content.svelte';
+  import {input as data} from './Input.svelte';
+  import { status } from './NewSceneButton.svelte';
 
-  let { click, status, hasQuestion }: TaskButtonProps = $props();
-
-  let value:string | undefined = $state();
-  let dc = $derived(status);
-  let level = $derived(parseInt(value as string) || dc);
-  let target = $derived(level * 3);
-  let answer = $state('');
-  let keywords:string[] = $state([]);
-
-  $effect(() => {
-    value = dc.toString();
-  });
+  let input = $derived(data.value);
+  let hasQuestion = $derived(input !== '');
 
   function generate() {
+    const userInput: ContentData = {
+      type: 'input',
+      output: input,
+    };
+
     answer = '';
     let string = '';
     const result = rollOnDCTable(target);
@@ -41,11 +36,23 @@
     if(isAndOrBut)
       string += `<br/>${keywords.join(', ')}`;
 
-    click?.({
-      output:`${string}`,
+    const output: ContentData = {
+      output: string,
       type: 'task',
-    });
+    };
+
+    content.add([ userInput, output ]);
+
+    data.reset();
   }
+
+  let value:number | undefined = $state(status.value);
+  let dc = $derived(value);
+  let level = $derived(value || dc);
+  let target = $derived(level * 3);
+  let answer = $state('');
+  let keywords:string[] = $state([]);
+
 </script>
 
 <div class="flex">

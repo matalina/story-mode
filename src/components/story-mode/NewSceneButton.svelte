@@ -1,3 +1,8 @@
+<script lang="ts" module>
+  import { createStatus } from '../../lib/status.svelte';
+  export let status = createStatus();
+</script>
+
 <script lang="ts">
 	import type { ContentData } from '../../lib/content.svelte.js';
   import { DiceRoll } from "@dice-roller/rpg-dice-roller";
@@ -6,15 +11,16 @@
   import { content } from '../../App.svelte';
 
   let roll: DiceRoll | undefined = $state();
-  let status: number | undefined = $state();
+  let value = $state(status.value);
+
 
   function addStatus() {
     roll = new DiceRoll('1d6');
-    status = roll.total;
+    status.update( roll.total );
 
     const output =
-      `<em class="text-xs italic">${statuses[status - 1].guidance}</em><br/>` +
-      `<strong>Scene Status:</strong> ${statuses[status - 1].status} ${status} (${statuses[status - 1].target})`;
+      `<em class="text-xs italic">${statuses[value - 1].guidance}</em><br/>` +
+      `<strong>Scene Status:</strong> ${statuses[value - 1].status} ${value} (${statuses[value - 1].target})`;
 
     const data: ContentData = {
       output,

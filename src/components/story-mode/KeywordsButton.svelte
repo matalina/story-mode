@@ -1,20 +1,33 @@
 <script lang="ts">
   import { getRandomKeywords } from '../../lib/keywords';
-  import type { ButtonProps } from '../../lib/types';
   import KeywordsIcon from '../../assets/keywords.svg';
+  import {content } from '../../App.svelte';
+  import type { ContentData } from '../../lib/content.svelte';
+  import {input as data} from './Input.svelte';
 
-  interface KeywordsButtonProps extends ButtonProps {
-    count?: number;
+  let input = $derived(data.value);
+  let hasQuestion = $derived(input !== '');
+
+  function generate() {
+    keywords = getRandomKeywords(3);
+
+    const userInput: ContentData = {
+      type: 'input',
+      output: input,
+    };
+
+    const output: ContentData = {
+      type: 'keyword',
+      output: keywords.join(', ')
+    };
+
+    content.add([ userInput, output ]);
+
+    data.reset();
   }
-
-  let { click, count = 3, hasQuestion }:KeywordsButtonProps = $props();
 
   let keywords: string[] = $state([]);
 
-  function generate() {
-    keywords = getRandomKeywords(count);
-    click?.({type: 'keyword', output: keywords.join(', ')})
-  }
 </script>
 
 
