@@ -30,6 +30,7 @@ Would Like to Haves
 - [ ] Custom Random Tables
 - [ ] Keyword interpretation
 - [ ] Better Inspiration than just 3 key words
+- [ ] Simple Maps (Carta Style)
 
 Initial Release
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
