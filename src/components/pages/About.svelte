@@ -58,11 +58,11 @@
           <td>Success, but</td>
         </tr>
         <tr>
-          <td>DC to DC+5</td>
+          <td>DC to DC+4</td>
           <td>Success</td>
         </tr>
         <tr>
-          <td>DC+6+</td>
+          <td>DC+5 +</td>
           <td>Success, and</td>
         </tr>
       </tbody>
