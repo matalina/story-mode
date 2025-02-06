@@ -3,6 +3,7 @@
   import { getRandomKeywords } from '../../lib/keywords';
   import type { ButtonProps } from '../../lib/types';
   import { oracle, rollOnTable } from '../../lib/tables';
+  import OracleIcon from '../../assets/oracle.svg';
 
   let { click, hasQuestion }:ButtonProps = $props();
 
@@ -48,10 +49,12 @@
 </script>
 
 <button
+  class="w-[48px] flex items-center justify-center"
   onclick={getAnswer}
   disabled={!hasQuestion ? true : undefined}
-  >Yes/No</button
 >
+  <img src={OracleIcon} alt="Yes/No" class="h-[24px]"/>
+</button>
 
 <style>
   @reference '../../app.css';

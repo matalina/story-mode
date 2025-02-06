@@ -2,6 +2,7 @@
   import { getRandomKeywords } from '../../lib/keywords';
   import type { ButtonProps } from '../../lib/types';
   import { rollOnDCTable } from '../../lib/tables';
+  import CheckIcon from '../../assets/check.svg';
 
   interface TaskButtonProps extends ButtonProps {
     status: number;
@@ -48,8 +49,10 @@
 </script>
 
 <div class="flex">
-  <input type="text" bind:value={value} class="w-9"/>
-  <button onclick={generate} disabled={!hasQuestion ? true : undefined}>Check</button>
+  <input type="text" bind:value={value} class="w-[48px]"/>
+  <button onclick={generate} disabled={!hasQuestion ? true : undefined}   class="w-[48px] flex items-center justify-center">
+    <img src={CheckIcon} alt="Check" class="h-[24px]"/>
+  </button>
 </div>
 
 <style>

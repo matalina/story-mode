@@ -1,6 +1,7 @@
 <script lang="ts">
   import { DiceRoller } from '@dice-roller/rpg-dice-roller';
   import type { ButtonProps } from '../../lib/types';
+  import RollIcon from '../../assets/d20.svg';
 
   let { click, hasQuestion }:ButtonProps = $props();
 
@@ -19,12 +20,13 @@
 </script>
 
 <div class="flex">
-  <input bind:value={notation} class="w-40"/>
+  <input bind:value={notation} class="w-[96px]"/>
   <button
+  class="w-[48px] flex items-center justify-center"
     onclick={roll}
     disabled={!hasQuestion ? true : undefined}
   >
-    Roll
+    <img src={RollIcon} alt="Roll" class="h-[24px]"/>
   </button>
 </div>
 
