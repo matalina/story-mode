@@ -16,6 +16,7 @@ export function createContent() {
   function reset() {
     value = {};
     localStorage.setItem('content', JSON.stringify(value));
+    
   }
 
   function add(data: ContentData) {
