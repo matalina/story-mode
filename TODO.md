@@ -11,7 +11,25 @@ Bugs
 New Features
 - [X] Add link to github repo
 - [X] Add About page
-- [ ] Look at different more reliable layout
+- [X] Look at different more reliable layout
+- [ ] Refactor with new layout
+  - [ ] Content "Store"
+- [ ] Tooltips for icon buttons
+
+Would Like to Haves
+- [ ] Export Story as html or md file
+- [ ] Save Scene & Clear for New Scene
+- [ ] Random Tables
+  - [ ] Simple NPC Creation
+  - [ ] Simple Creature Creation
+  - [ ] Simple Hex Creation
+  - [ ] Simple Shop/Inn Creation
+  - [ ] Simple Street Creation
+  - [ ] Simple Hazard Creation
+  - [ ] Simple Quest Creation
+- [ ] Custom Random Tables
+- [ ] Keyword interpretation
+- [ ] Better Inspiration than just 3 key words
 
 Initial Release
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)
