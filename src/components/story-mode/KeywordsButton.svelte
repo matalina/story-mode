@@ -11,17 +11,13 @@
   function generate() {
     keywords = getRandomKeywords(3);
 
-    const userInput: ContentData = {
-      type: 'input',
-      output: input,
-    };
-
     const output: ContentData = {
       type: 'keyword',
-      output: keywords.join(', ')
+      output: keywords.join(', '),
+      input: `<strong>Q:</strong> ${input}`,
     };
 
-    content.add([ userInput, output ]);
+    content.add([ output ]);
 
     data.reset();
   }

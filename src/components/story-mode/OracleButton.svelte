@@ -11,11 +11,6 @@
   let hasQuestion = $derived(input !== '');
 
   function getAnswer() {
-    const userInput: ContentData = {
-      type: 'input',
-      output: input,
-    };
-
     reset();
     const result = rollOnTable(oracle);
     const answer = result.description;
@@ -36,10 +31,10 @@
     const string: ContentData = {
       output,
       type: 'oracle',
+      input: `<strong>Q:</strong> ${input}`,
     };
 
-
-    content.add([ userInput, string ]);
+    content.add([ string ]);
 
     data.reset();
   }

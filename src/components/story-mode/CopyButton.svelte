@@ -7,7 +7,13 @@
 
   function copySession() {
     if (navigator?.clipboard) {
-      const copy = keys.map(key => `<p>${content.value[key].output}</p>`).join('\n\n');
+      const copy = keys.map(key => {
+        let input = '';
+        if(content.value[key]?.input) {
+          input = `${content.value[key].input}<br/>`;
+        }
+        return `<p>${input}${content.value[key].output}</p>`
+      }).join('\n\n');
       const blob = new Blob([copy], { type: 'text/html' });
       const data = [new ClipboardItem({ 'text/html': blob })];
       navigator.clipboard.write(data);

@@ -19,11 +19,11 @@
           <td>No, and</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>2 - 9</td>
           <td>No, but</td>
         </tr>
         <tr>
-          <td>3 - 14</td>
+          <td>10 - 14</td>
           <td>Yes, but</td>
         </tr>
         <tr>
