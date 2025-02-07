@@ -1,8 +1,14 @@
+import type { SvelteComponent } from "svelte";
+
 export interface RandomTable {
   name: string;
   description: string;
   diceFormula: string;
   table: MinMaxRow[];
+}
+
+export interface CustomTableList{
+  [key: string]: RandomTable;
 }
 
 export interface MinMaxRow {
@@ -21,5 +27,11 @@ export interface ContentData {
   input?: string;
 };
 
-
 export type ContentType = 'start' | 'task' | 'oracle' | 'keyword' | 'input'| 'roll' | 'table';
+
+export interface SettingPage {
+  name: string;
+  component: SvelteComponent;
+};
+
+export type CustomTableViews = 'create' | 'import'| 'view' | ''

@@ -1,5 +1,14 @@
-<div class="overflow-auto max-h-[600px]">
+<script lang="ts">
+  import Page from "../ui/Page.svelte";
+</script>
+<Page>
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
+
+  <h4>v.1.1.3</h4>
+
+  <ul>
+    <li>Added Custom Tables</li>
+  </ul>
 
   <h4>v.1.1.2</h4>
 
@@ -86,4 +95,4 @@
     <li>Initial Release</li>
     <li>Only Change log & Story Mode</li>
   </ul>
-</div>
+</Page>

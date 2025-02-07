@@ -32,6 +32,7 @@ Would Like to Haves
 - [ ] Keyword interpretation
 - [ ] Better Inspiration than just 3 key words
 - [ ] Simple Maps (Carta Style)
+- [ ] Who/What/Where/When/Why/How?/Foe
 
 Initial Release
 - [X] Upgrade to latest Tailwindcss and Svelte (and other dependencies)

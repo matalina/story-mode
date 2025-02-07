@@ -4,6 +4,7 @@
   import GithubIcon from "../../assets/github.svg";
   import TimelineIcon from "../../assets/timeline.svg";
   import InfoIcon from "../../assets/info.svg";
+  import GearIcon from "../../assets/gear.svg";
 </script>
 
 <header class="flex justify-between items-center mb-3">
@@ -12,6 +13,9 @@
     <h2 class="text-3xl font-bold">Story Mode</h2>
   </Link>
   <div class="flex gap-2 items-center">
+    <Link to="/settings">
+      <img src={GearIcon} alt="Settings" class="h-6"/>
+    </Link>
     <Link to="/about">
       <img src={InfoIcon} alt="About" class="h-6"/>
     </Link>

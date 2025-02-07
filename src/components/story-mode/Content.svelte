@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import CloseIcon from '../../assets/close.svg';
+  import CloseIcon from '../../assets/trash.svg';
   import { content as data } from '../../App.svelte';
 
   import RollIcon from '../../assets/d20.svg';

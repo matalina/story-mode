@@ -10,6 +10,8 @@
   import About from './components/pages/About.svelte';
   import Header from './components/ui/Header.svelte';
   import More from './components/pages/More.svelte';
+  import Settings from './components/pages/Settings.svelte';
+
   export let url = '';
 </script>
 
@@ -22,6 +24,7 @@
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
         <Route path="/more"><More /></Route>
+        <Route path="/settings"><Settings/></Route>
       </section>
     </div>
   </Router>

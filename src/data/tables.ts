@@ -1,5 +1,14 @@
 import type { RandomTable } from "./types";
 
+export const emptyTable: RandomTable = {
+  name: '',
+  description: '',
+  diceFormula: '',
+  table: [
+    { min: 0, max: 0, description: '' },
+  ],
+}
+
 export const dcTable: RandomTable = {
   name: 'DC Table',
   description: 'Skill/Task checks',

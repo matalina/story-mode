@@ -1,4 +1,8 @@
-<div class="overflow-auto max-h-[600px]">
+<script lang="ts">
+  import Page from "../ui/Page.svelte";
+</script>
+
+<Page>
   <h3 class="text-3xl font-bold mb-3">About</h3>
 
   <article class="markdown-body entry-content container-lg" itemprop="text">
@@ -71,4 +75,4 @@
     <p dir="auto">If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.</p>
     <p dir="auto">Need some random inspiration. Click Keywords and you'll get 3 from our list of over 700 words.</p>
   </article>
-</div>
+</Page>
