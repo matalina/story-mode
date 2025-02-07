@@ -1,28 +1,17 @@
 <script lang="ts">
   import MoreIcon from '../../assets/more.svg';
-  import {content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
-  import {input as data} from './Input.svelte';
+  import { navigate } from 'svelte-routing';
 
-  let input = $derived(data.value);
-  let hasQuestion = $derived(input !== '');
-
-  function returnInput() {
-    const userInput: ContentData = {
-      type: 'input',
-      output: input,
-    };
-
-    content.add(userInput);
-
-    data.reset();
+  function openMore() {
+    navigate('/more');
   }
 </script>
 
-<button
-  onclick={returnInput}
-  disabled={true}
-  class="w-[48px] flex items-center justify-center"
->
-  <img src={MoreIcon} alt="Add Text"  class="h-[24px]"/>
-</button>
+<div class="relative">
+  <button
+    onclick={openMore}
+    class="w-[48px] flex items-center justify-center"
+  >
+    <img src={MoreIcon} alt="More Options"  class="h-[24px]"/>
+  </button>
+</div>

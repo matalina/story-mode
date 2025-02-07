@@ -4,12 +4,12 @@
 </script>
 
 <script>
-  import { Link, Route, Router } from 'svelte-routing';
+  import { Route, Router } from 'svelte-routing';
   import ChangeLog from './components/pages/ChangeLog.svelte';
   import Story from './components/pages/Story.svelte';
   import About from './components/pages/About.svelte';
   import Header from './components/ui/Header.svelte';
-  import { createInput } from './lib/input.svelte';
+  import More from './components/pages/More.svelte';
   export let url = '';
 </script>
 
@@ -21,6 +21,7 @@
         <Route path="/"><Story /></Route>
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
+        <Route path="/more"><More /></Route>
       </section>
     </div>
   </Router>

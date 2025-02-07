@@ -1,6 +1,12 @@
 <div class="overflow-auto max-h-[600px]">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
+  <h4>v.1.1.2</h4>
+
+  <ul>
+    <li>Added Genre, weather, season, time of day, day of the week and moon phases random tables</li>
+  </ul>
+
   <h4>v.1.1.1</h4>
 
   <ul>

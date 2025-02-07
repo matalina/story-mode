@@ -1,4 +1,5 @@
 import { DiceRoll } from '@dice-roller/rpg-dice-roller';
+import type { RandomTable } from './types';
 
 export function rollOnTable(table: RandomTable) {
   const roll = new DiceRoll(table.diceFormula);
@@ -38,19 +39,6 @@ export function rollOnDCTable(dc: number) {
     else if ((min && total >= (min as number)) && (max && total <= (max as number))) description = desc;
   }
   return { description, roll };
-}
-
-export interface RandomTable {
-  name: string;
-  description: string;
-  diceFormula: string;
-  table: MinMaxRow[];
-}
-
-export interface MinMaxRow {
-  min: number | string | null;
-  max: number | string | null;
-  description: string | Function;
 }
 
   export const dcTable: RandomTable = {
@@ -183,4 +171,16 @@ export const genre: RandomTable = {
     { min: 26, max: 26, description: 'Multiverse' },
     { min: 27, max: 27, description: 'Romance' },
   ],
+};
+
+
+/* Table Options */
+
+export const moreTables: {[key: string]: RandomTable} = {
+  [genre.name]: genre,
+  [weather.name]: weather,
+  [season.name]: season,
+  [timeDay.name]: timeDay,
+  [moonPhases.name]: moonPhases,
+  [daysWeek.name]: daysWeek,
 };

@@ -7,7 +7,7 @@ Bugs
 - [X] After a delete, when adding new content it doesn't update automatically
 - [ ] Boox doesn't load css for some reason (may be a manifest problem)
 - [X] Copy content adds the close button to the text
-- [ ] Button bar on small screens can be too wide
+- [X] Button bar on small screens can be too wide
 
 New Features
 - [X] Add link to github repo
@@ -15,12 +15,12 @@ New Features
 - [X] Look at different more reliable layout
 - [X] Refactor with new layout
   - [X] Content "Store"
-- [ ] Tooltips for icon buttons
+- [ ] ~Tooltips for icon buttons~
 
 Would Like to Haves
 - [ ] Export Story as html or md file
 - [ ] Save Scene & Clear for New Scene
-- [ ] Random Tables
+- [X] Random Tables
   - [ ] Simple NPC Creation
   - [ ] Simple Creature Creation
   - [ ] Simple Hex Creation

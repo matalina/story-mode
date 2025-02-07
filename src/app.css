@@ -42,3 +42,7 @@ ul {
 .entry {
   @apply pb-3 mb-2 border-b;
 }
+
+small {
+  @apply text-xs italic;
+}

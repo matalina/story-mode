@@ -1,7 +1,14 @@
-export interface ButtonProps {
-  click: (args: any) => void;
-  hasQuestion?: boolean;
-  hasContent?: boolean;
+export interface RandomTable {
+  name: string;
+  description: string;
+  diceFormula: string;
+  table: MinMaxRow[];
+}
+
+export interface MinMaxRow {
+  min: number | string | null;
+  max: number | string | null;
+  description: string | Function;
 }
 
 export const statuses = [
