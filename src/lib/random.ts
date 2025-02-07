@@ -1,5 +1,5 @@
 export function getRandomItems(items: Array<any>, count: number) {
-  const words = [];
+  const words: any[] = [];
   for (let i = 0; i < count; i++) {
     let word = getRandomItem(items);
     while (words.includes(word)) {

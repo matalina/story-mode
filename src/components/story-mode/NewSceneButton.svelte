@@ -1,14 +1,14 @@
 <script lang="ts" module>
-  import { createStatus } from '../../lib/status.svelte';
+  import { createStatus } from '../../data/status.svelte';
   export let status = createStatus();
 </script>
 
 <script lang="ts">
-	import type { ContentData } from '../../lib/content.svelte.js';
+  import type { ContentData } from '../../data/types';
   import { DiceRoll } from "@dice-roller/rpg-dice-roller";
   import SceneIcon from "../../assets/scene.svg";
-  import { statuses } from "../../lib/types";
   import { content } from '../../App.svelte';
+  import { statuses } from '../../data/constants';
 
   let roll: DiceRoll | undefined = $state();
   let value = $state(status.value);

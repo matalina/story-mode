@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import CloseIcon from '../../assets/close.svg';
   import { content as data } from '../../App.svelte';
-  import type { Content } from '../../lib/content.svelte';
 
   import RollIcon from '../../assets/d20.svg';
   import CheckIcon from '../../assets/check.svg';
@@ -12,6 +11,7 @@
   import InputIcon from '../../assets/text.svg';
   import TableIcon from '../../assets/table.svg';
   import InfoIcon from '../../assets/info.svg';
+  import type { Content } from '../../data/types';
 
   let content: Content = $derived(data.value);
 

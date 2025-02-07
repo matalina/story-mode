@@ -1,11 +1,12 @@
 <script lang="ts">
   import { DiceRoll } from '@dice-roller/rpg-dice-roller';
   import { getRandomKeywords } from '../../lib/keywords';
-  import { oracle, rollOnTable } from '../../lib/tables';
+  import { rollOnTable } from '../../lib/tables';
   import OracleIcon from '../../assets/oracle.svg';
   import {content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
+  import type { ContentData } from '../../data/types';
   import {input as data} from './Input.svelte';
+  import { oracle } from '../../data/tables';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');

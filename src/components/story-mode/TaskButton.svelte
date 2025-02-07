@@ -4,7 +4,7 @@
   import CheckIcon from '../../assets/check.svg';
 
   import {content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
+  import type { ContentData } from '../../data/types';
   import {input as data} from './Input.svelte';
   import { status } from './NewSceneButton.svelte';
 

@@ -15,7 +15,7 @@ New Features
 - [X] Look at different more reliable layout
 - [X] Refactor with new layout
   - [X] Content "Store"
-- [ ] ~Tooltips for icon buttons~
+- [ ] ~~Tooltips for icon buttons~~
 
 Would Like to Haves
 - [ ] Export Story as html or md file

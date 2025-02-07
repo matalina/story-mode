@@ -2,7 +2,7 @@
   import { getRandomKeywords } from '../../lib/keywords';
   import KeywordsIcon from '../../assets/keywords.svg';
   import {content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
+  import type { ContentData } from '../../data/types';
   import {input as data} from './Input.svelte';
 
   let input = $derived(data.value);

@@ -1,15 +1,17 @@
-export interface RandomTable {
-  name: string;
-  description: string;
-  diceFormula: string;
-  table: MinMaxRow[];
-}
+import type { RandomTable } from './types';
+import { daysWeek, genre, moonPhases, season, timeDay, weather } from './tables';
 
-export interface MinMaxRow {
-  min: number | string | null;
-  max: number | string | null;
-  description: string | Function;
-}
+/* Table Options */
+
+export const moreTables: {[key: string]: RandomTable} = {
+  [genre.name]: genre,
+  [weather.name]: weather,
+  [season.name]: season,
+  [timeDay.name]: timeDay,
+  [moonPhases.name]: moonPhases,
+  [daysWeek.name]: daysWeek,
+};
+
 
 export const statuses = [
   {

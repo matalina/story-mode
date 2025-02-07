@@ -1,15 +1,4 @@
-export interface Content {
-  [timestamp: number]: ContentData;
-};
-
-export interface ContentData {
-  output: string;
-  type: ContentType;
-  input?: string;
-};
-
-
-export type ContentType = 'start' | 'task' | 'oracle' | 'keyword' | 'input'| 'roll' | 'table';
+import type { ContentData } from "./types";
 
 export function createContent() {
   let value = $state(JSON.parse(localStorage.getItem('content') || '{}'));

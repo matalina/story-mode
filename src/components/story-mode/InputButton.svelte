@@ -1,8 +1,8 @@
 <script lang="ts">
   import TextIcon from '../../assets/text.svg';
   import {content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
   import {input as data} from './Input.svelte';
+  import type { ContentData } from '../../data/types';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');

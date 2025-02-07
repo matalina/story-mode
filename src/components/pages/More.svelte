@@ -4,7 +4,8 @@
   import BackIcon from '../../assets/back.svg';
   import RollIcon from '../../assets/d20.svg';
   import PlusIcon from '../../assets/plus.svg';
-  import { moreTables, rollOnTable } from '../../lib/tables';
+  import { rollOnTable } from '../../lib/tables';
+  import { moreTables } from '../../data/constants';
 
   const tables = $state(Object.keys(moreTables));
 

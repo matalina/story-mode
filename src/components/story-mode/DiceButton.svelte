@@ -2,8 +2,8 @@
   import { DiceRoller } from '@dice-roller/rpg-dice-roller';
   import RollIcon from '../../assets/d20.svg';
   import { content } from '../../App.svelte';
-  import type { ContentData } from '../../lib/content.svelte';
   import {input as data} from './Input.svelte';
+  import type { ContentData } from '../../data/types';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');
