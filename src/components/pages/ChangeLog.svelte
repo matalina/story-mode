@@ -6,7 +6,6 @@
   <ul>
     <li>Added More Button</li>
     <li>Updated Oracle & About page</li>
-    <li>Added some Random Tables</li>
     <li>Updated entries layout & Data</li>
   </ul>
 
