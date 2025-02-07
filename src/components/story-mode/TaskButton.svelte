@@ -12,11 +12,6 @@
   let hasQuestion = $derived(input !== '');
 
   function generate() {
-    const userInput: ContentData = {
-      type: 'input',
-      output: input,
-    };
-
     answer = '';
     let string = '';
     const result = rollOnDCTable(target);
@@ -39,9 +34,10 @@
     const output: ContentData = {
       output: string,
       type: 'task',
+      input: `<strong>Do:</strong> ${input}`,
     };
 
-    content.add([ userInput, output ]);
+    content.add([ output ]);
 
     data.reset();
   }

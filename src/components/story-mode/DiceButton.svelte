@@ -13,18 +13,13 @@
     const roller = new DiceRoller();
     roller.roll(notation);
 
-
-    const userInput: ContentData = {
-      type: 'input',
-      output: input,
-    };
-
     const output: ContentData = {
       type: 'roll',
       output: roller.output,
+      input: `<strong>Roll:</strong> ${input}`,
     };
 
-    content.add([ userInput, output ]);
+    content.add([ output ]);
 
     data.reset();
   }

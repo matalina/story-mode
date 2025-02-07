@@ -5,10 +5,11 @@ export interface Content {
 export interface ContentData {
   output: string;
   type: ContentType;
+  input?: string;
 };
 
 
-export type ContentType = 'start' | 'task' | 'oracle' | 'keyword' | 'input'| 'roll';
+export type ContentType = 'start' | 'task' | 'oracle' | 'keyword' | 'input'| 'roll' | 'table';
 
 export function createContent() {
   let value = $state(JSON.parse(localStorage.getItem('content') || '{}'));
