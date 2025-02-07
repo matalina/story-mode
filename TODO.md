@@ -28,7 +28,8 @@ Would Like to Haves
   - [ ] Simple Street Creation
   - [ ] Simple Hazard Creation
   - [ ] Simple Quest Creation
-- [ ] Custom Random Tables
+- [X] Custom Random Tables
+  - [ ] Import/Export Random Tables
 - [ ] Keyword interpretation
 - [ ] Better Inspiration than just 3 key words
 - [ ] Simple Maps (Carta Style)
