@@ -17,6 +17,7 @@
   function addStatus() {
     roll = new DiceRoll('1d6');
     status.update( roll.total );
+    value = status.value;
 
     const output =
       `<em class="text-xs italic">${statuses[value - 1].guidance}</em><br/>` +
