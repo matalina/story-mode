@@ -49,6 +49,10 @@
   let answer = $state('');
   let keywords:string[] = $state([]);
 
+  $effect(() => {
+    value = status.value;
+  })
+
 </script>
 
 <div class="flex">
