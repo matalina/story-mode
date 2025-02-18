@@ -24,6 +24,6 @@
   id="question"
   bind:value={question}
   oninput={changeInput}
-  class="w-full px-3 py-2 text-stone-900 border border-stone-900 h-[60px]"
+  class="w-full px-3 py-2 h-[60px]"
   placeholder="Question, task or text"
 ></textarea>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+
   import closeIcon from '../../assets/close.svg'
   interface ModalProps {
     open: boolean;
