@@ -13,6 +13,11 @@
     data.reset();
     open = false;
   }
+
+  function cancel() {
+    open = false;
+  }
+  $inspect(open);
 </script>
 
 <button
@@ -25,11 +30,11 @@
 </button>
 
 {#if open}
-  <Modal open={open} title="Clear">
+  <Modal open={open} title="Clear" close={cancel}>
     <p>Are you sure you want to clear the content?</p>
     {#snippet footer()}
       <button onclick={clear}>Yes</button>
-      <button onclick={() => open = false}>No</button>
+      <button onclick={cancel}>No</button>
     {/snippet}
   </Modal>
 {/if}
