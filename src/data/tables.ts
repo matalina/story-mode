@@ -16,7 +16,7 @@ export const dcTable: RandomTable = {
 table: [
   { min: 1, max: 1, description: 'Fail, and' },
   { min: 2, max: '-6', description: 'Fail, but' },
-  { min: '+5', max: '-1', description: 'Success, but' },
+  { min: '-5', max: '-1', description: 'Success, but' },
   { min: '+0', max: '+4', description: 'Success' },
   { min: '+5', max: 20, description: 'Success, and' },
 ],
