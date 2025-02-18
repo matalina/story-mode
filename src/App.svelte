@@ -8,14 +8,14 @@
   import ChangeLog from './components/pages/ChangeLog.svelte';
   import Story from './components/pages/Story.svelte';
   import About from './components/pages/About.svelte';
-  import Header from './components/ui/Header.svelte';
+  import Header, { isDarkMode } from './components/ui/Header.svelte';
   import More from './components/pages/More.svelte';
   import Settings from './components/pages/Settings.svelte';
 
   export let url = '';
 </script>
 
-<div id="app" class="mx-auto lg:w-1/2">
+<div id="app" class="mx-auto lg:w-1/2" class:dark={isDarkMode.value}>
   <Router {url}>
     <div class="layout p-3 border h-full">
       <Header />
