@@ -42,7 +42,7 @@
       </Link>
   </div>
   <div class="flex gap-2 items-center justify-center">
-    <a href="/settings" use:link use:tooltip={{text: `Settings`, delay: 100}}>
+    <a href="/settings" use:link use:tooltip={`Settings`}>
       <img src={GearIcon} alt="Settings" class="h-6 w-6"/>
     </a>
     <button onclick={toggleTheme} class="transparent" use:tooltip={`Theme`}>
