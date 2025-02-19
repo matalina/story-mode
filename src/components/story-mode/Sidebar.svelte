@@ -17,8 +17,6 @@
   <OracleButton />
   <TaskButton/>
   <Divider />
-  <ClearButton/>
-  <CopyButton />
   </div>
 <div class="flex gap-2">
   <DiceButton  />

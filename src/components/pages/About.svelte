@@ -2,7 +2,7 @@
   import Page from "../ui/Page.svelte";
 </script>
 
-<Page>
+<Page back="/">
   <h3 class="text-3xl font-bold mb-3">About</h3>
 
   <article class="markdown-body entry-content container-lg" itemprop="text">
@@ -72,7 +72,7 @@
       </tbody>
     </table>
     <p dir="auto">You can add any text you like at any point in the game.  Add Flavor, tell the story.</p>
-    <p dir="auto">If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do.</p>
+    <p dir="auto">If you need a dice roll for something we got you covered too. You can use it to roll for anything, but don't forget to add some text to tell us about what that roll is gonna do. Using a simple <a href="https://dice-roller.github.io/documentation/guide/notation/">dice notation.</a></p>
     <p dir="auto">Need some random inspiration. Click Keywords and you'll get 3 from our list of over 700 words.</p>
   </article>
 </Page>

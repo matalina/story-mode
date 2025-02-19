@@ -1,7 +1,8 @@
 <script lang="ts">
   import Page from "../ui/Page.svelte";
 </script>
-<Page>
+
+<Page back="/">
   <h3 class="text-3xl font-bold mb-3">Change Log</h3>
 
   <h4>v.1.1.3</h4>

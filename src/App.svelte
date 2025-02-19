@@ -11,16 +11,20 @@
   import Header, { isDarkMode } from './components/ui/Header.svelte';
   import More from './components/pages/More.svelte';
   import Settings from './components/pages/Settings.svelte';
+  import Home from './components/pages/Home.svelte';
 
-  export let url = '';
+  let url = $state('');
+  let path = $derived(window.location.pathname);
+
+  $inspect(url, path);
 </script>
 
 <div id="app" class="mx-auto lg:w-1/2" class:dark={isDarkMode.value}>
   <Router {url}>
     <div class="layout p-3 border h-full">
-      <Header />
       <section class="">
-        <Route path="/"><Story /></Route>
+        <Route path="/"><Home /></Route>
+        <Route path="/story"><Story /></Route>
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
         <Route path="/more"><More /></Route>

@@ -10,7 +10,7 @@
   let Block = $derived(blocks[index]);
 </script>
 
-<Page>
+<Page back="/">
   <h3 class="text-3xl font-bold mb-3">Settings</h3>
 
   <select bind:value={value} class="w-full border">

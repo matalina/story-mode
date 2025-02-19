@@ -29,7 +29,7 @@
   }
 </script>
 
-<Page>
+<Page back="/story">
   <h3 class="text-3xl font-bold mb-3">More Options</h3>
 
   <h4 class="text-2xl font-bold mb-3">Random Tables</h4>
