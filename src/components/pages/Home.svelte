@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-  import { Link } from "svelte-routing";
+  import { link, Link } from "svelte-routing";
   import Logo from "../../assets/logo.svg";
   import GithubIcon from "../../assets/github.svg";
   import InfoIcon from "../../assets/info.svg";
@@ -13,6 +13,7 @@
   import MoonIcon from "../../assets/moon.svg";
   import BookIcon from "../../assets/open-book.svg";
   import { content } from "../../App.svelte";
+  import { tooltip } from "../../lib/tooltip.svelte";
 
   function toggleTheme() {
     isDarkMode.toggle();
@@ -41,16 +42,18 @@
       </Link>
   </div>
   <div class="flex gap-2 items-center justify-center">
-    <Link to="/settings">
+    <a href="/settings" use:link use:tooltip={{text: `Settings`, delay: 100}}>
       <img src={GearIcon} alt="Settings" class="h-6 w-6"/>
-    </Link>
-    <button onclick={toggleTheme} class="transparent">
+    </a>
+    <button onclick={toggleTheme} class="transparent" use:tooltip={`Theme`}>
       <img src={!isDarkMode.value ? SunIcon : MoonIcon} alt="Theme" class="h-6 w-6"/>
     </button>
-    <Link to="/about">
+    <a href="/about" use:link use:tooltip={`About`}>
       <img src={InfoIcon} alt="About" class="h-6 w-6"/>
-    </Link>
-    <a href="https://github.com/matalina/story-mode"><img src={GithubIcon} alt="Github" class="h-6 w-6"/></a>
+    </a>
+    <a href="https://github.com/matalina/story-mode" use:tooltip={`Github`}>
+      <img src={GithubIcon} alt="Github" class="h-6 w-6"/>
+    </a>
   </div>
   <div>
 

@@ -1,10 +1,3 @@
-<script module lang="ts">
-  import { createDarkMode } from "../../data/dark-mode.svelte";
-  import GearIcon from "../../assets/gear.svg";
-
-  export let isDarkMode = createDarkMode();
-</script>
-
 <script lang="ts">
   import { Link } from "svelte-routing";
   import Logo from "../../assets/logo.svg";

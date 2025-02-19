@@ -1,5 +1,6 @@
 <script lang="ts" module>
   import { createContent } from './data/content.svelte';
+
   export let content = createContent();
 </script>
 
@@ -8,18 +9,16 @@
   import ChangeLog from './components/pages/ChangeLog.svelte';
   import Story from './components/pages/Story.svelte';
   import About from './components/pages/About.svelte';
-  import Header, { isDarkMode } from './components/ui/Header.svelte';
   import More from './components/pages/More.svelte';
   import Settings from './components/pages/Settings.svelte';
-  import Home from './components/pages/Home.svelte';
+  import Home, { isDarkMode } from './components/pages/Home.svelte';
+
 
   let url = $state('');
-  let path = $derived(window.location.pathname);
-
-  $inspect(url, path);
+  let dark = $derived(isDarkMode.value);
 </script>
 
-<div id="app" class="mx-auto lg:w-1/2" class:dark={isDarkMode.value}>
+<div id="app" class="mx-auto lg:w-1/2" class:dark={dark}>
   <Router {url}>
     <div class="layout p-3 border h-full">
       <section class="">
