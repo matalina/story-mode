@@ -8,7 +8,7 @@
 <div class="">
   <BackButton {back}/>
 
-  <div class="overflow-auto max-h-[580px] mt-2">
+  <div class="mt-2 overflow-auto max-h-[calc(100vh-48px)]">
     {@render children()}
   </div>
 </div>
