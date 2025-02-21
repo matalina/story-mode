@@ -1,4 +1,5 @@
 import type { SvelteComponent } from "svelte";
+import type { LogLevel } from "vite";
 
 export interface RandomTable {
   name: string;
@@ -35,3 +36,44 @@ export interface SettingPage {
 };
 
 export type CustomTableViews = 'create' | 'import'| 'view' | ''
+
+export interface MapData {
+  start: string;
+  current: string;
+  objective: Objective;
+  map: { [key: string]: MapItem };
+  
+}
+
+export interface Objective {
+  type: QuestType;
+  name: string;
+}
+
+export const questTypes = ['find', 'deliver', 'defeat', 'collect', 'investigate', 'hunt', 'explore'] as const
+export type QuestType = typeof questTypes[number]
+
+export interface MapItem {
+  name: string;
+  location: MapLocation;
+  icon: string;
+  visible: boolean;
+}
+
+export interface MapLocation {
+  row: number;
+  col: number;
+}
+
+export type Level = 'high' | 'low' | 'no';
+
+const settingTypes = [ 'wilderness', 'urban', 'underground', 'space', 'dungeon', 'sea' ] as const;
+type SettingTypes = typeof settingTypes[number];
+
+export interface GameConfig {
+  size: number; // default 5
+  magic: Level;
+  tech: Level;
+  setting: SettingTypes;
+}
+

@@ -12,6 +12,7 @@
   import More from './components/pages/More.svelte';
   import Settings from './components/pages/Settings.svelte';
   import Home, { isDarkMode } from './components/pages/Home.svelte';
+  import Map from './components/pages/Map.svelte';
 
 
   let url = $state('');
@@ -27,7 +28,8 @@
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
         <Route path="/more"><More /></Route>
-        <Route path="/settings"><Settings/></Route>
+        <Route path="/settings"><Settings/></Route> 
+        <Route path="/map"><Map /></Route>
       </section>
     </div>
   </Router>
