@@ -1,6 +1,7 @@
 export interface TooltipOptions {
 	delay?: number;
 	text: string;
+	position?: 'top' | 'bottom' | 'left' | 'right';
 }
 
 export function tooltip(node: HTMLElement, params: string | TooltipOptions) {
@@ -9,10 +10,12 @@ export function tooltip(node: HTMLElement, params: string | TooltipOptions) {
 	
 	let delay = 1000;
 	let text = '';
+	let position = 'top';
 
 	if (typeof params !== 'string') {
 		text = params.text;
 		if (params.delay) delay = params.delay;
+		if (params.position) position = params.position;
 	} else {
 		text = params;
 	}
@@ -29,6 +32,7 @@ export function tooltip(node: HTMLElement, params: string | TooltipOptions) {
 			const child = document.createElement('span');
 			child.textContent = text;
 			child.setAttribute('id', 'tooltip');
+			child.classList.add(position);
 			node.appendChild(child);
 		}, delay);
 	}

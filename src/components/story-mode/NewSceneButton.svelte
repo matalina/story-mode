@@ -9,6 +9,7 @@
   import SceneIcon from "../../assets/scene.svg";
   import { content } from '../../App.svelte';
   import { statuses } from '../../data/constants';
+  import { tooltip } from '../../lib/tooltip.svelte';
 
   let roll: DiceRoll | undefined = $state();
   let value = $state(status.value);
@@ -35,6 +36,7 @@
 <button
   class="w-[48px] flex items-center justify-center"
   onclick={addStatus}
+  use:tooltip={ {text: 'New Scene', position: 'right'} }
 >
   <img src={SceneIcon} alt="New Scene" class="h-[24px]"/>
 </button>

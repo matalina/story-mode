@@ -7,6 +7,7 @@
   import type { ContentData } from '../../data/types';
   import {input as data} from './Input.svelte';
   import { status } from './NewSceneButton.svelte';
+  import { tooltip } from '../../lib/tooltip.svelte';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');
@@ -57,7 +58,12 @@
 
 <div class="flex">
   <input type="text" bind:value={value} class="w-[48px]"/>
-  <button onclick={generate} disabled={!hasQuestion ? true : undefined}   class="w-[48px] flex items-center justify-center">
+  <button 
+    onclick={generate} 
+    disabled={!hasQuestion ? true : undefined} 
+    use:tooltip={'Generate Task'} 
+    class="w-[48px] flex items-center justify-center"
+  >
     <img src={CheckIcon} alt="Check" class="h-[24px]"/>
   </button>
 </div>

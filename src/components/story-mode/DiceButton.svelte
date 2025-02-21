@@ -4,6 +4,7 @@
   import { content } from '../../App.svelte';
   import {input as data} from './Input.svelte';
   import type { ContentData } from '../../data/types';
+  import { tooltip } from '../../lib/tooltip.svelte';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');
@@ -30,7 +31,8 @@
   <button
     class="w-[48px] flex items-center justify-center"
     onclick={roll}
-    disabled={!hasQuestion ? true : undefined}
+    disabled={!hasQuestion ? true : undefined}  
+    use:tooltip={'Roll Dice'}
   >
     <img src={RollIcon} alt="Roll" class="h-[24px]"/>
   </button>

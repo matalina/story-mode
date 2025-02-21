@@ -1,6 +1,7 @@
 <script lang="ts">
   import { content } from "../../App.svelte";
   import CopyIcon from "../../assets/copy.svg";
+  import { tooltip } from "../../lib/tooltip.svelte";
 
   let keys = $derived(Object.keys(content.value));
   let hasContent: boolean = $derived(keys.length > 0)
@@ -26,6 +27,7 @@
   class:disable={!hasContent ? true : undefined}
   class="w-[48px] flex items-center justify-center"
   onclick={copySession}
+  use:tooltip={ {text: 'Copy Session', position: 'left'} }
 >
   <img src={CopyIcon} alt="Copy" class="h-[24px]"/>
 </button>
