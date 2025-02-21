@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import { createInput } from "../../data/input.svelte";
+  import { createInput } from "../../data/models/input.svelte";
 
   export let input = createInput();
 </script>

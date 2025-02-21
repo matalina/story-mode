@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import { createContent } from './data/content.svelte';
+  import { createContent } from './data/models/content.svelte';
 
   export let content = createContent();
 </script>

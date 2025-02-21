@@ -1,7 +1,7 @@
-<script lang="ts">
-  import { createMap } from "../../data/map.svelte";
+<script module lang="ts">
+  import { createMap } from "../../data/models/map.svelte";
 
-  const map = createMap();
+  export const map = createMap();
 </script>
 
 <div class="flex justify-center">

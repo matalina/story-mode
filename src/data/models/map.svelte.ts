@@ -1,4 +1,8 @@
-import type { GameConfig, MapData, MapItem } from "./types";
+import { DiceRoll } from "@dice-roller/rpg-dice-roller";
+import { status } from "../../components/story-mode/NewSceneButton.svelte";
+import { rollOnTable } from "../../lib/tables";
+import { creatureMotivations, creatureTypes } from "../tables";
+import type { Creature, GameConfig, MapData, MapItem, Objective } from "../types";
 
 export function createMap() {
   let value: MapData = $state(JSON.parse(localStorage.getItem('map') || '{}'));
@@ -7,9 +11,10 @@ export function createMap() {
     return `${item.location.row}.${item.location.col}`;
   }
 
-  function generateMap(config: GameConfig) {
+  function generateMap() {
     value.map = {};
     // generate quest 
+    const quest: Objective = generateQuest();
     // generate start location
     // generate objective(s)
     // generate boons
@@ -65,4 +70,25 @@ function canMoveTo(from: string, to: string) {
   }
 
   return true;
+}
+
+function generateQuest(): Objective {
+  // Starting with a Monster Hunt
+  const creature = generateCreature();
+
+  return {
+    type: 'hunt',
+    name: `Hunt the ${creature.type}`,
+    creature: creature,
+    source: rollOnTable(sources).description
+  }
+}
+
+function generateCreature(): Creature {
+  const type = rollOnTable(creatureTypes);
+  return {
+    type: type.description,
+    level: new DiceRoll('1d6').total,
+    motivation: rollOnTable(creatureMotivations).description,
+  }
 }

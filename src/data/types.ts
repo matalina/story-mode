@@ -48,6 +48,8 @@ export interface MapData {
 export interface Objective {
   type: QuestType;
   name: string;
+  creature?: Creature;
+  source?: string;
 }
 
 export const questTypes = ['find', 'deliver', 'defeat', 'collect', 'investigate', 'hunt', 'explore'] as const
@@ -75,5 +77,12 @@ export interface GameConfig {
   magic: Level;
   tech: Level;
   setting: SettingTypes;
+}
+
+export interface Creature {
+  name?: string;
+  level: number;
+  type: string;
+  motivation: string;
 }
 
