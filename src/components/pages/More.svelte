@@ -25,7 +25,7 @@
       type: 'table',
       output: result,
     });
-    navigate('/');
+    navigate('/story');
   }
 </script>
 
