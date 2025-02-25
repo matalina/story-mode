@@ -2,6 +2,9 @@
   import { getRandomKeywords } from '../../lib/keywords';
   import { rollOnDCTable } from '../../lib/tables';
   import CheckIcon from '../../assets/check.svg';
+  import EaseIcon from '../../assets/ease.svg';
+  import HinderIcon from '../../assets/hinder.svg';
+  import ResetIcon from '../../assets/reset.svg';
 
   import {content } from '../../App.svelte';
   import type { ContentData } from '../../data/types';
@@ -43,7 +46,7 @@
     data.reset();
   }
 
-  let value:number | undefined = $state(status.value);
+  let value:number = $state(status.value);
   let dc = $derived(value);
   let level = $derived(value || dc);
   let target = $derived(level * 3);
@@ -53,6 +56,18 @@
   $effect(() => {
     value = status.value;
   })
+
+  function ease() {
+    value -= 1;
+  }
+
+  function hinder() {
+    value += 1;
+  }
+
+  function reset() {
+    value = status.value;
+  }
 
 </script>
 
@@ -65,5 +80,26 @@
     class="w-[48px] flex items-center justify-center"
   >
     <img src={CheckIcon} alt="Check" class="h-[24px]"/>
+  </button>
+  <button 
+    onclick={ease} 
+    use:tooltip={'Ease Task'} 
+    class="w-[48px] flex items-center justify-center"
+  >
+    <img src={EaseIcon} alt="Ease" class="h-[24px]"/>
+  </button>
+  <button 
+    onclick={hinder} 
+    use:tooltip={'Hinder Task'} 
+    class="w-[48px] flex items-center justify-center"
+  >
+    <img src={HinderIcon} alt="Ease" class="h-[24px]"/>
+  </button>
+  <button 
+    onclick={reset} 
+    use:tooltip={'Reset'} 
+    class="w-[48px] flex items-center justify-center"
+  >
+    <img src={ResetIcon} alt="Reset" class="h-[24px]"/>
   </button>
 </div>
