@@ -4,14 +4,22 @@
   import {input as data} from './Input.svelte';
   import type { ContentData } from '../../data/types';
   import { tooltip } from '../../lib/tooltip.svelte';
+  import MarkdownIt from 'markdown-it';
 
   let input = $derived(data.value);
   let hasQuestion = $derived(input !== '');
 
+  let md = new MarkdownIt({
+    html: true,
+    xhtmlOut: true,
+    breaks: true,
+    linkify: true,
+  });
+
   function returnInput() {
     const userInput: ContentData = {
       type: 'input',
-      output: input,
+      output: md.render(input),
     };
 
     content.add(userInput);
