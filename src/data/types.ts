@@ -50,6 +50,7 @@ export interface Objective {
   name: string;
   creature?: Creature;
   source?: string;
+  location?: string;
 }
 
 export const questTypes = ['find', 'deliver', 'defeat', 'collect', 'investigate', 'hunt', 'explore'] as const
@@ -84,5 +85,6 @@ export interface Creature {
   level: number;
   type: string;
   motivation: string;
+  location: string;
 }
 

@@ -1,5 +1,5 @@
-import type { RandomTable } from './types';
-import { creatureMotivations, creatureTypes, daysWeek, genre, moonPhases, season, timeDay, weather } from './tables';
+import type { MapItem, MapLocation, RandomTable } from './types';
+import { caseSources, clueTypes, creatureMotivations, creatureTypes, daysWeek, genre, moonPhases, season, setbackTypes, timeDay, urbanLocations, weather } from './tables';
 
 /* Table Options */
 
@@ -12,6 +12,10 @@ export const moreTables: {[key: string]: RandomTable} = {
   [daysWeek.name]: daysWeek,
   [creatureTypes.name]: creatureTypes,
   [creatureMotivations.name]: creatureMotivations,
+  [urbanLocations.name]: urbanLocations,
+  [caseSources.name]: caseSources,
+  [clueTypes.name]: clueTypes,
+  [setbackTypes.name]: setbackTypes,
 };
 
 
@@ -47,3 +51,13 @@ export const statuses = [
     guidance: 'Situation is beyond all control',
   },
 ];
+
+export const emptyTile: MapItem = {
+  name: '',
+  location: {
+    row: 0,
+    col: 0,
+  } as MapLocation,
+  icon: '',
+  visible: false,
+};

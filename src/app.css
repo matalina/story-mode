@@ -167,3 +167,6 @@ dialog h2 {
 .map td{
   @apply md:w-20 md:h-20 w-15 h-15;
 }
+.map td.active {
+  @apply bg-stone-400;
+}
