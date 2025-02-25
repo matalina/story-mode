@@ -1,3 +1,12 @@
+import MarkdownIt from 'markdown-it';
+
+let md = new MarkdownIt({
+  html: true,
+  xhtmlOut: true,
+  breaks: true,
+  linkify: true,
+});
+
 export function createInput() {
   let value = $state('');
   let cleared = $state(false);
@@ -8,7 +17,7 @@ export function createInput() {
   }
 
   function update(data: string) {
-    value = data;
+    value = md.renderInline(data);
     cleared = false;
   }
 
