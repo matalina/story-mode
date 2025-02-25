@@ -1,4 +1,4 @@
-import type { CustomTableList, RandomTable } from "./types";
+import type { CustomTableList, RandomTable } from "../types";
 
 export function createCustomTables() {
   let value: CustomTableList = $state(JSON.parse(localStorage.getItem('tables') || '{}'));

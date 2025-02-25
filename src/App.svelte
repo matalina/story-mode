@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import { createContent } from './data/content.svelte';
+  import { createContent } from './data/models/content.svelte';
 
   export let content = createContent();
 </script>
@@ -27,7 +27,7 @@
         <Route path="/change-log"><ChangeLog /></Route>
         <Route path="/about"><About /></Route>
         <Route path="/more"><More /></Route>
-        <Route path="/settings"><Settings/></Route>
+        <Route path="/settings"><Settings/></Route> 
       </section>
     </div>
   </Router>

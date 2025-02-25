@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import { createCustomTables } from "../../../data/custom-tables.svelte";
+  import { createCustomTables } from "../../../data/models/custom-tables.svelte";
   export let customTables = createCustomTables();
 </script>
 
