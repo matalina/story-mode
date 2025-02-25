@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import { createStatus } from '../../data/status.svelte';
+  import { createStatus } from '../../data/models/status.svelte';
   export let status = createStatus();
 </script>
 

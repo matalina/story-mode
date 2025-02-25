@@ -1,5 +1,5 @@
 <script module lang="ts">
-  import { createDarkMode } from "../../data/dark-mode.svelte";
+  import { createDarkMode } from "../../data/models/dark-mode.svelte";
   export let isDarkMode = createDarkMode();
 </script>
 

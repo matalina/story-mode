@@ -159,3 +159,11 @@ dialog h2 {
 .dark #tooltip {
   @apply bg-stone-100 text-stone-900;
 }
+
+/* Map Styles */
+.map {
+
+}
+.map td{
+  @apply md:w-20 md:h-20 w-15 h-15;
+}
