@@ -1,1 +1,1 @@
-<div class="md:w-3"></div>
+<div class="w-0 border-l mx-[1px] border-stone-300"></div>

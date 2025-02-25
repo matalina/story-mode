@@ -12,11 +12,8 @@
 </script>
 
 <div class="flex gap-2 mt-2">
-  <NewSceneButton />
-  <Divider />
   <OracleButton />
   <TaskButton/>
-  <Divider />
   </div>
 <div class="flex gap-2">
   <DiceButton  />
