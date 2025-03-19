@@ -13,7 +13,7 @@
         if(content.value[key]?.input) {
           input = `${content.value[key].input}`;
         }
-        return `<p>${input}${content.value[key].output}</p>`
+        return `<p>${input}<br/>${content.value[key].output}</p>`
       }).join('\n\n');
       
       const blob = new Blob([copy], { type: 'text/html' });
